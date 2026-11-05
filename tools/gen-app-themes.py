@@ -40,6 +40,16 @@ def contrast(a, b):
     return (la + 0.05) / (lb + 0.05)
 
 
+def mix(a, b, t):
+    """a with t (0..1) of b mixed in, in sRGB."""
+    pa, pb = ([int(h[i:i + 2], 16) for i in (1, 3, 5)] for h in (a, b))
+    return "#" + "".join(f"{round(x + (y - x) * t):02x}" for x, y in zip(pa, pb))
+
+
+def readable_on(bg, *candidates):
+    return max(candidates, key=lambda c: contrast(c, bg))
+
+
 def check_variant(name, v):
     problems = []
     css = (ROOT / "themes" / name / "gtk-4.0" / "gtk.css").read_text(encoding="utf-8")
@@ -96,10 +106,102 @@ def render_ghostty(name, v):
     return out
 
 
+MC_LINES = dict(horiz="─", vert="│", lefttop="╭", righttop="╮", leftbottom="╰", rightbottom="╯",
+                topmiddle="┬", bottommiddle="┴", leftmiddle="├", rightmiddle="┤", cross="┼")
+
+
+def render_mc(name, v):
+    """Midnight Commander true-color skin.
+
+    Panels, command line, editor and viewer use the terminal background, so mc blends in with the
+    Agata terminal schemes. Dialogs and menus sit on the GTK view color (surface), like Agata's own
+    dialogs. The cursor bar is an accent bar whose shade and text color are picked per variant for
+    the best contrast; hotkeys are accent-colored and underlined like GTK mnemonics. File types
+    use the variant's readable ANSI colors (bright on dark, normal on light), following ls. Error
+    dialogs sit on the normal ANSI red, which is calmer than Gruvbox's bright red.
+    """
+    ui, t, a = v["ui"], v["terminal"], v["ansi"]
+    bg, dark = ui["background"], v["appearance"] == "dark"
+    hue = a["bright" if dark else "normal"]
+    text = (bg, t["foreground"])
+    cursor, cursor_text = max(((s, c) for s in (ui["accent"], ui["accent_text"]) for c in text),
+                              key=lambda p: contrast(p[1], p[0]))
+    aliases = {
+        "Background": bg, "Surface": ui["surface"], "Elevated": ui["elevated"],
+        "Shade": mix(bg, "#000000", 0.25 if dark else 0.12), "Selection": t["selection"],
+        "Text": t["foreground"], "TextBright": t["foreground_bright"], "TextDim": t["foreground_dim"],
+        "Faint": a["bright"]["black"], "Accent": ui["accent_text"],
+        "Cursor": cursor, "CursorText": cursor_text,
+        **{f"Ansi{k.title()}": hue[k] for k in CHROMATIC},
+        "MarkedText": readable_on(hue["yellow"], *text),
+        "Match": t["match"], "MatchText": readable_on(t["match"], *text), "MatchFocused": t["match_focused"],
+        "Error": a["normal"]["red"], "ErrorText": readable_on(a["normal"]["red"], bg, t["foreground_bright"]),
+        "DiffAdded": mix(bg, hue["green"], 0.25), "DiffRemoved": mix(bg, hue["red"], 0.25),
+        "DiffChanged": mix(bg, hue["blue"], 0.25), "DiffChangedNew": mix(bg, hue["yellow"], 0.3),
+    }
+    sections = {
+        "core": dict(
+            _default_="Text;Background", selected="CursorText;Cursor", marked="AnsiYellow;;bold",
+            markselect="MarkedText;AnsiYellow;bold", gauge="CursorText;Cursor", input="Text;Background",
+            inputunchanged="TextDim;Background", inputmark="Text;Selection", disabled="TextDim;Surface",
+            reverse="CursorText;Cursor", commandlinemark="Text;Selection", header="Accent;;bold",
+            inputhistory="", commandhistory="", shadow="Faint;Shade"),
+        "dialog": dict(
+            _default_="Text;Surface", dfocus="CursorText;Cursor", dhotnormal="Accent;;underline",
+            dhotfocus="CursorText;Cursor;underline", dtitle="Accent;;bold"),
+        "error": dict(
+            _default_="ErrorText;Error", errdfocus="Error;ErrorText", errdhotnormal=";;underline",
+            errdhotfocus="Error;ErrorText;underline", errdtitle=";;bold"),
+        "filehighlight": dict(
+            directory="AnsiBlue;;bold", executable="AnsiGreen;;bold", symlink="AnsiCyan;;bold", hardlink="",
+            stalelink="AnsiRed;;bold+underline", device="AnsiYellow;;bold", special="AnsiYellow",
+            core="AnsiRed", temp="TextDim", archive="AnsiRed", doc="AnsiYellow", source="AnsiCyan",
+            media="AnsiMagenta", graph="AnsiMagenta;;bold", database="AnsiGreen"),
+        "menu": dict(
+            _default_="Text;Surface", menusel="CursorText;Cursor", menuhot="Accent;;underline",
+            menuhotsel="CursorText;Cursor;underline", menuinactive="Text;Surface"),
+        "popupmenu": dict(_default_="Text;Surface", menusel="CursorText;Cursor", menutitle="Accent;;bold"),
+        "buttonbar": dict(hotkey="Accent;Background", button="Text;Surface"),
+        "statusbar": dict(_default_="Text;Surface"),
+        "help": dict(
+            _default_="Text;Surface", helpitalic="AnsiGreen;;italic", helpbold="TextBright;;bold",
+            helplink="Accent;;underline", helpslink="CursorText;Cursor", helptitle="Accent;;bold"),
+        "editor": dict(
+            _default_="Text;Background", editbold="AnsiYellow;;bold", editmarked="Text;Selection",
+            editwhitespace="Faint;Background", editnonprintable=";Shade", editlinestate="TextDim;Surface",
+            bookmark="Text;Elevated", bookmarkfound="MatchText;Match", editrightmargin=";Surface",
+            editbg=";Surface", editframe="TextDim", editframeactive="Accent", editframedrag="MatchFocused"),
+        "viewer": dict(
+            _default_="Text;Background", viewbold="TextBright;;bold", viewunderline="Accent;;underline",
+            viewselected="MatchText;Match"),
+        "diffviewer": dict(
+            added="Text;DiffAdded", changedline="Text;DiffChanged", changednew="Text;DiffChangedNew;bold",
+            changed="Text;DiffChanged", removed="Text;DiffRemoved", error="ErrorText;Error"),
+        "widget-panel": {"sort-up-char": "▴", "sort-down-char": "▾", "hiddenfiles-show-char": "•",
+                         "hiddenfiles-hide-char": "○", "history-prev-item-char": "◂",
+                         "history-next-item-char": "▸", "history-show-list-char": "▾",
+                         "filename-scroll-left-char": "◂", "filename-scroll-right-char": "▸"},
+        "widget-scrollbar": {"first-vert-char": "▴", "last-vert-char": "▾", "first-horiz-char": "◂",
+                             "last-horiz-char": "▸", "current-char": "■", "background-char": "░"},
+        "widget-editor": {"window-state-char": "↕", "window-close-char": "✕"},
+    }
+    lines = {**MC_LINES, **{"d" + k: c for k, c in MC_LINES.items() if k not in ("cross",)}}
+    sec = lambda title, d: f"\n[{title}]\n" + "".join(f"    {k} = {val}\n".replace(" \n", "\n") for k, val in d.items())
+    out = header("#", name, v)
+    out += "# Needs a true-color terminal (COLORTERM=truecolor) and mc built with S-Lang; see extras/mc/README.md.\n"
+    out += sec("skin", dict(description=v["title"], truecolors="true"))
+    out += sec("Lines", lines)
+    out += sec("aliases", aliases)
+    for title, d in sections.items():
+        out += sec(title, d)
+    return out
+
+
 # app -> (output path for a variant, renderer)
 APPS = {
     "alacritty": (lambda name: EXTRAS / "alacritty" / f"{name.lower()}.toml", render_alacritty),
     "ghostty": (lambda name: EXTRAS / "ghostty" / name, render_ghostty),
+    "mc": (lambda name: EXTRAS / "mc" / f"{name.lower()}.ini", render_mc),
 }
 
 

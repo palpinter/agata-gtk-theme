@@ -7,6 +7,7 @@ the GNOME Shell. Each app has its own folder with the schemes and installation s
 |---|---|---|
 | Alacritty | [`alacritty/`](alacritty) | Nord Dark, Nord Light, Gruvbox Dark, Gruvbox Light |
 | Ghostty | [`ghostty/`](ghostty) | Nord Dark, Nord Light, Gruvbox Dark, Gruvbox Light |
+| Midnight Commander | [`mc/`](mc) | Nord Dark, Nord Light, Gruvbox Dark, Gruvbox Light |
 
 ## Variants
 
