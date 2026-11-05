@@ -16,9 +16,16 @@ Agata is a GTK 3/4 desktop theme (plus GNOME Shell, Cinnamon, XFWM4, Metacity, G
 ./install.sh remove-libadwaita                # drop the gtk-4.0 link, restore newest backup
 ./install.sh install nord both --dest /tmp/agata-test   # install somewhere other than ~/.local/share/themes
 bash -n install.sh                            # syntax-check the installer
+
+# Maintenance tools (tools/README.md has details)
+tools/check-gtk-css.py                        # parse all 16 gtk*.css with the installed GTK 3 and 4; must report 0 problems
+tools/check-parity.sh                         # Nord vs Gruvbox must differ only in colors
+tools/regenerate-shell-layer.sh [--check]     # rebuild the GNOME Shell compatibility layer from the installed GNOME
+tools/add-libadwaita-palette.py               # rewrite the libadwaita palette block in gtk-4.0/gtk.css
+tools/st-probe.sh [--light] themes/Agata-Nord-Dark '#panel > StButton.panel-button:hover'   # computed St style
 ```
 
-To try a stylesheet change, reinstall the theme and reload it. For GTK 3 that means re-selecting the theme or running an app with `GTK_THEME=Agata-Nord-Dark <app>`. Install overwrites the target directory completely: it copies to a temp directory and then `mv`s it into place.
+The theme itself still ships pre-compiled; the tools are only for maintenance. To try a stylesheet change, reinstall the theme and reload it. For GTK 3 that means re-selecting the theme or running an app with `GTK_THEME=Agata-Nord-Dark <app>`. Install overwrites the target directory completely: it copies to a temp directory and then `mv`s it into place.
 
 ## Layout and how the four themes relate
 
@@ -52,13 +59,14 @@ To try a stylesheet change, reinstall the theme and reload it. For GTK 3 that me
   
   Layout needs the same care as colors. Agata's generic layout rules beat GNOME's stock layout for the new structure, unless the stock rule is `!important`. For example, `.quick-toggle { min-width: 12em; border-radius: 10px }` overrode the stock `.quick-toggle-has-menu .quick-toggle { min-width: auto }` and pushed quick-settings menu arrows out of their tiles. That is why (C) ports *all* of Agata's `.quick-menu-toggle` rules, layout included. The menu button also has `.icon-button`, so the extra class is needed to out-rank `.quick-settings .icon-button`. The St probe cannot resolve `em` lengths without a Clutter backend (they read as -1), but `px` values work.
   
-  It sits first so that Agata's own rules win ties. Agata design changes belong below the END marker. The layer is generated from the dark stock theme for all four themes: Light themes get an inverted mapping (stock dark bg → Agata bg, white → Agata fg), matching Agata Light's light lock screen and OSD. Status colors (recording and sharing pills, privacy indicator), the QR code, the screenshot flash and dimming keep GNOME's values.
+  It sits first so that Agata's own rules win ties. **Never hand-edit the layer.** Change the generator (`tools/shell-layer/gen_layer.py`) and run `tools/regenerate-shell-layer.sh`. On the GNOME release the committed layer came from (see its header), `--check` must report no changes. Agata design changes belong below the END marker. The layer is generated from the dark stock theme for all four themes: Light themes get an inverted mapping (stock dark bg → Agata bg, white → Agata fg), matching Agata Light's light lock screen and OSD. Status colors (recording and sharing pills, privacy indicator), the QR code, the screenshot flash and dimming keep GNOME's values.
 - Do not remove "dead" pre-GNOME-47 selectors (`.quick-menu-toggle`, `.message-list-section`, `#vhandle`, ...). Older GNOME releases on the tested distros still use them.
 
 ## Checking changes without switching themes
 
-- GTK CSS: load a stylesheet with `Gtk.CssProvider` (PyGObject, GTK 3 or 4) and collect its `parsing-error` signals. All 16 `gtk*.css` files currently parse with zero errors on GTK 3.24 and 4.24.
-- Shell CSS: the St typelib works without a running shell. Run `gjs` with `GI_TYPELIB_PATH=/usr/lib/gnome-shell:/usr/lib/mutter-<ver>`, then build `new St.Theme({default_stylesheet, application_stylesheet})`, `new St.ThemeContext()` and a chain of `St.ThemeNode.new(...)`. Read `get_background_color()`, `get_foreground_color()` and `get_box_shadow()`. The stock theme is in `/usr/share/gnome-shell/gnome-shell-theme.gresource` (`gresource extract`).
+- GTK CSS: `tools/check-gtk-css.py` loads each stylesheet with `Gtk.CssProvider` and collects its `parsing-error` signals. All 16 `gtk*.css` files currently parse with zero errors on GTK 3.24 and 4.24.
+- Shell CSS: `tools/st-probe.sh` evaluates widget chains with real St, without a running shell. It layers the stock theme (extracted from `/usr/share/gnome-shell/gnome-shell-theme.gresource`) under an Agata stylesheet, the same way the User Themes extension does. `tools/shell-layer/st-env.sh` locates the St/mutter typelibs (`/usr/lib`, `/usr/lib64` or a Debian multiarch dir).
+- To check the live desktop after editing, reinstall and set the User Themes `name` to `''` and back to reload the Shell theme. libadwaita apps only pick up CSS changes when restarted.
 
 ## Installer (`install.sh`)
 
