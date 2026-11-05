@@ -171,9 +171,9 @@ Matching wallpapers for the Agata theme are available in the repository:
 
 [Wallpapers](https://github.com/deividsonorio/agata-gtk-theme/tree/main/wallpapers)
 
-## Terminal color schemes
+## Other apps
 
-Matching color schemes for **Alacritty** and **Ghostty** are available in all four variants (Nord and Gruvbox, Dark and Light) in [`extras/terminal`](extras/terminal). See its README for installation.
+Matching color schemes for other apps are available in all four variants (Nord and Gruvbox, Dark and Light) in [`extras`](extras). Alacritty and Ghostty are covered so far. Each app folder has installation steps, and [`extras/palette.json`](extras/palette.json) lists every color for theming apps that have no scheme yet.
 
 ## Credits
 

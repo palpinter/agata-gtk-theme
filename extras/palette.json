@@ -1,0 +1,209 @@
+{
+  "name": "Agata",
+  "homepage": "https://github.com/palpinter/agata-gtk-theme",
+  "about": "Source of truth for the app color schemes in extras/. Edit here, then run tools/gen-app-themes.py. ui.* must match the GTK theme (libadwaita palette block in themes/<variant>/gtk-4.0/gtk.css); min_contrast, where present, is enforced for the ANSI colors on ui.background. The generator checks both.",
+  "variants": {
+    "Agata-Nord-Dark": {
+      "title": "Agata Nord Dark",
+      "edition": "nord",
+      "appearance": "dark",
+      "notes": "Standard Nord ANSI colors; bright black lifted to Nord's comment gray #616e88 (#4c566a is barely visible).",
+      "ui": {
+        "background": "#303744",
+        "foreground": "#eceff4",
+        "surface": "#394253",
+        "elevated": "#454f63",
+        "accent": "#81a1c1",
+        "accent_foreground": "#eceff4",
+        "accent_text": "#81a1c1"
+      },
+      "terminal": {
+        "foreground": "#d8dee9",
+        "foreground_bright": "#eceff4",
+        "foreground_dim": "#a5abb6",
+        "cursor": "#81a1c1",
+        "selection": "#4c566a",
+        "bar": "#394253",
+        "match": "#88c0d0",
+        "match_focused": "#ebcb8b"
+      },
+      "ansi": {
+        "normal": {
+          "black": "#3b4252",
+          "red": "#bf616a",
+          "green": "#a3be8c",
+          "yellow": "#ebcb8b",
+          "blue": "#81a1c1",
+          "magenta": "#b48ead",
+          "cyan": "#88c0d0",
+          "white": "#e5e9f0"
+        },
+        "bright": {
+          "black": "#616e88",
+          "red": "#bf616a",
+          "green": "#a3be8c",
+          "yellow": "#ebcb8b",
+          "blue": "#81a1c1",
+          "magenta": "#b48ead",
+          "cyan": "#8fbcbb",
+          "white": "#eceff4"
+        },
+        "dim": {
+          "black": "#373e4d",
+          "red": "#94545d",
+          "green": "#809575",
+          "yellow": "#b29e75",
+          "blue": "#68809a",
+          "magenta": "#8c738c",
+          "cyan": "#6d96a5",
+          "white": "#aeb3bb"
+        }
+      }
+    },
+    "Agata-Nord-Light": {
+      "title": "Agata Nord Light",
+      "edition": "nord",
+      "appearance": "light",
+      "notes": "Nord hues darkened (HSL lightness only) to >= 4.5:1 (normal) and >= 3:1 (bright) contrast on the background; plain Nord colors reach about 2:1.",
+      "min_contrast": {
+        "normal": 4.5,
+        "bright": 3.0
+      },
+      "ui": {
+        "background": "#eceff4",
+        "foreground": "#2e3440",
+        "surface": "#e5e9f0",
+        "elevated": "#d8dee9",
+        "accent": "#81a1c1",
+        "accent_foreground": "#2e3440",
+        "accent_text": "#5e81ac"
+      },
+      "terminal": {
+        "foreground": "#2e3440",
+        "foreground_bright": "#2e3440",
+        "foreground_dim": "#4c566a",
+        "cursor": "#5e81ac",
+        "selection": "#c5ccd8",
+        "bar": "#e5e9f0",
+        "match": "#357587",
+        "match_focused": "#8d6618"
+      },
+      "ansi": {
+        "normal": {
+          "black": "#3b4252",
+          "red": "#b54954",
+          "green": "#597442",
+          "yellow": "#8d6618",
+          "blue": "#4d6e96",
+          "magenta": "#8c5d83",
+          "cyan": "#357587",
+          "white": "#d8dee9"
+        },
+        "bright": {
+          "black": "#616e88",
+          "red": "#bf616a",
+          "green": "#719353",
+          "yellow": "#b2811f",
+          "blue": "#5e81ac",
+          "magenta": "#a87ca0",
+          "cyan": "#4393aa",
+          "white": "#e5e9f0"
+        }
+      }
+    },
+    "Agata-Gruvbox-Dark": {
+      "title": "Agata Gruvbox Dark",
+      "edition": "gruvbox",
+      "appearance": "dark",
+      "notes": "Standard Gruvbox ANSI colors; black lifted to #3c3836 so it differs from the background.",
+      "ui": {
+        "background": "#282828",
+        "foreground": "#ebdbb2",
+        "surface": "#3c3836",
+        "elevated": "#504945",
+        "accent": "#83a598",
+        "accent_foreground": "#ebdbb2",
+        "accent_text": "#83a598"
+      },
+      "terminal": {
+        "foreground": "#ebdbb2",
+        "foreground_bright": "#fbf1c7",
+        "foreground_dim": "#a89984",
+        "cursor": "#83a598",
+        "selection": "#504945",
+        "bar": "#3c3836",
+        "match": "#8ec07c",
+        "match_focused": "#fabd2f"
+      },
+      "ansi": {
+        "normal": {
+          "black": "#3c3836",
+          "red": "#cc241d",
+          "green": "#98971a",
+          "yellow": "#d79921",
+          "blue": "#458588",
+          "magenta": "#b16286",
+          "cyan": "#689d6a",
+          "white": "#a89984"
+        },
+        "bright": {
+          "black": "#928374",
+          "red": "#fb4934",
+          "green": "#b8bb26",
+          "yellow": "#fabd2f",
+          "blue": "#83a598",
+          "magenta": "#d3869b",
+          "cyan": "#8ec07c",
+          "white": "#ebdbb2"
+        }
+      }
+    },
+    "Agata-Gruvbox-Light": {
+      "title": "Agata Gruvbox Light",
+      "edition": "gruvbox",
+      "appearance": "light",
+      "notes": "Gruvbox colors in light-theme order: dark black, light white, the readable faded shades as normal and the neutral ones as bright.",
+      "ui": {
+        "background": "#f9f5d7",
+        "foreground": "#3c3836",
+        "surface": "#ebdbb2",
+        "elevated": "#d5c4a1",
+        "accent": "#458588",
+        "accent_foreground": "#3c3836",
+        "accent_text": "#076678"
+      },
+      "terminal": {
+        "foreground": "#3c3836",
+        "foreground_bright": "#282828",
+        "foreground_dim": "#7c6f64",
+        "cursor": "#458588",
+        "selection": "#d5c4a1",
+        "bar": "#ebdbb2",
+        "match": "#427b58",
+        "match_focused": "#b57614"
+      },
+      "ansi": {
+        "normal": {
+          "black": "#3c3836",
+          "red": "#9d0006",
+          "green": "#79740e",
+          "yellow": "#b57614",
+          "blue": "#076678",
+          "magenta": "#8f3f71",
+          "cyan": "#427b58",
+          "white": "#d5c4a1"
+        },
+        "bright": {
+          "black": "#7c6f64",
+          "red": "#cc241d",
+          "green": "#98971a",
+          "yellow": "#d79921",
+          "blue": "#458588",
+          "magenta": "#b16286",
+          "cyan": "#689d6a",
+          "white": "#ebdbb2"
+        }
+      }
+    }
+  }
+}
