@@ -2303,6 +2303,22 @@ StEntry {
   border-right-width: 0;
 }
 
+.popup-menu .message-notification-group .message {
+  background-color: #434b5c;
+}
+
+.popup-menu .message-notification-group .message:hover {
+  background-color: #515968;
+}
+
+.popup-menu .message-notification-group .message:focus {
+  background-color: #515968;
+}
+
+.popup-menu .message-notification-group .message:active {
+  background-color: #616875;
+}
+
 #panel .panel-button.screen-recording-indicator,
 #panel .panel-button.screen-recording-indicator:hover,
 #panel .panel-button.screen-recording-indicator:focus,

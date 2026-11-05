@@ -2287,6 +2287,22 @@ StScrollBar > .hhandle:active {
   border-right-width: 0;
 }
 
+.popup-menu .message-notification-group .message {
+  background-color: #e2d3ac;
+}
+
+.popup-menu .message-notification-group .message:hover {
+  background-color: #d4c7a4;
+}
+
+.popup-menu .message-notification-group .message:focus {
+  background-color: #d4c7a4;
+}
+
+.popup-menu .message-notification-group .message:active {
+  background-color: #c5ba9b;
+}
+
 #panel .panel-button.screen-recording-indicator,
 #panel .panel-button.screen-recording-indicator:hover,
 #panel .panel-button.screen-recording-indicator:focus,
