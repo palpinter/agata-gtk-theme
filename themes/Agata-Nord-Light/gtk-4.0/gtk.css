@@ -4371,7 +4371,7 @@ row.expander image.expander-row-arrow:dir(rtl) {
 }
 
 row.expander image.expander-row-arrow:disabled {
-  filter: Opacity(var(0.35));
+  filter: opacity(0.35);
 }
 
 row.expander:checked image.expander-row-arrow {
@@ -5132,25 +5132,25 @@ colorchooser colorswatch:hover {
   box-shadow: 0 0 0 2px #81A1C1;
 }
 
-colorswatch#3B4252-color-button {
+colorswatch#add-color-button {
   border-radius: 12px 0 0 12px;
   color: #2E3440;
 }
 
-colorswatch#3B4252-color-button:only-child {
+colorswatch#add-color-button:only-child {
   border-radius: 12px;
 }
 
-colorswatch#3B4252-color-button overlay {
+colorswatch#add-color-button overlay {
   background-color: rgba(46, 52, 64, 0.05);
 }
 
-colorswatch#3B4252-color-button overlay:hover {
+colorswatch#add-color-button overlay:hover {
   background-color: rgba(46, 52, 64, 0.12);
   box-shadow: none;
 }
 
-colorswatch#3B4252-color-button overlay:active {
+colorswatch#add-color-button overlay:active {
   background-color: rgba(46, 52, 64, 0.3);
 }
 
@@ -6780,7 +6780,7 @@ window.background.chromium {
 }
 
 window.background.chromium:backdrop {
-  background-color: gtkmix(#2E3440, #ECEFF4, 10%);
+  background-color: mix(#ECEFF4, #2E3440, 0.1);
 }
 
 window.background.chromium headerbar.header-bar.titlebar {
@@ -6788,11 +6788,11 @@ window.background.chromium headerbar.header-bar.titlebar {
   background-color: #ECEFF4;
   color: #2E3440;
   box-shadow: inset 0 1px rgba(46, 52, 64, 0.1);
-  border-radius: 18px rgba(0, 0, 0, 0.75) 0 0;
+  border-radius: 18px 18px 0 0;
 }
 
 window.background.chromium headerbar.header-bar.titlebar:backdrop {
-  background-color: gtkmix(#2E3440, #ECEFF4, 6%);
+  background-color: mix(#ECEFF4, #2E3440, 0.06);
   color: rgba(46, 52, 64, 0.5);
 }
 
@@ -7237,12 +7237,12 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 }
 
 .sidebar-pane banner > revealer > widget {
-  background-color: gtkmix(#81A1C1, #ECEFF4, 30%);
+  background-color: mix(#ECEFF4, #81A1C1, 0.3);
   color: #2E3440;
 }
 
 .sidebar-pane banner > revealer > widget:backdrop {
-  background-color: gtkmix(#81A1C1, #ECEFF4, 30%);
+  background-color: mix(#ECEFF4, #81A1C1, 0.3);
 }
 
 .sidebar-pane:dir(ltr), .sidebar-pane:dir(ltr) banner > revealer > widget, .sidebar-pane.end:dir(rtl), .sidebar-pane.end:dir(rtl) banner > revealer > widget {
@@ -7361,13 +7361,13 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 
 .content-pane .sidebar-pane banner > revealer > widget,
 .sidebar-pane .content-pane banner > revealer > widget {
-  background-color: gtkmix(#81A1C1, #E5E9F0, 30%);
+  background-color: mix(#E5E9F0, #81A1C1, 0.3);
   color: #2E3440;
 }
 
 .content-pane .sidebar-pane banner > revealer > widget:backdrop,
 .sidebar-pane .content-pane banner > revealer > widget:backdrop {
-  background-color: gtkmix(#81A1C1, #E5E9F0, 30%);
+  background-color: mix(#E5E9F0, #81A1C1, 0.3);
 }
 
 .content-pane .sidebar-pane:dir(ltr), .content-pane .sidebar-pane:dir(ltr) banner > revealer > widget, .content-pane .sidebar-pane.end:dir(rtl), .content-pane .sidebar-pane.end:dir(rtl) banner > revealer > widget,
@@ -7868,4 +7868,51 @@ window#whiskermenu-window.background {
   box-shadow: none;
   margin: 0;
   border: 1px solid #C8D0DC;
+}
+
+
+/* Agata libadwaita palette: lets libadwaita widgets that this stylesheet does not
+   style itself (AdwDialog, AdwBottomSheet, AdwToggleGroup, AdwSpinner, ...)
+   pick up the Agata-Nord-Light colors instead of stock Adwaita and the system accent.
+   libadwaita 1.6+ maps its --*-color variables to these named colors, and
+   older releases read them directly. Status colors (success, warning, error,
+   destructive) are left to libadwaita. */
+@define-color accent_bg_color #81A1C1;
+@define-color accent_fg_color #2E3440;
+@define-color accent_color #5E81AC;
+@define-color window_bg_color #ECEFF4;
+@define-color window_fg_color #2E3440;
+@define-color view_bg_color #E5E9F0;
+@define-color view_fg_color #2E3440;
+@define-color headerbar_bg_color #ECEFF4;
+@define-color headerbar_fg_color #2E3440;
+@define-color headerbar_backdrop_color #ECEFF4;
+@define-color headerbar_border_color #2E3440;
+@define-color sidebar_bg_color #ECEFF4;
+@define-color sidebar_fg_color #2E3440;
+@define-color sidebar_backdrop_color #ECEFF4;
+@define-color sidebar_border_color rgba(46, 52, 64, 0.12);
+@define-color secondary_sidebar_bg_color #ECEFF4;
+@define-color secondary_sidebar_fg_color #2E3440;
+@define-color secondary_sidebar_backdrop_color #ECEFF4;
+@define-color secondary_sidebar_border_color rgba(46, 52, 64, 0.12);
+@define-color card_bg_color #D8DEE9;
+@define-color card_fg_color #2E3440;
+@define-color dialog_bg_color #ECEFF4;
+@define-color dialog_fg_color #2E3440;
+@define-color popover_bg_color #D8DEE9;
+@define-color popover_fg_color #2E3440;
+@define-color thumbnail_bg_color #D8DEE9;
+@define-color thumbnail_fg_color #2E3440;
+
+/* libadwaita 1.6+ (GTK 4.16+): derive accent and status text colors for this
+   theme's brightness rather than the system color scheme, so Light/Dark still
+   read correctly when the theme and the system preference differ. Older GTK
+   ignores this rule. */
+:root {
+  --standalone-color-oklab: min(l, 0.5) a b;
+  --active-toggle-bg-color: #ffffff;
+  --active-toggle-fg-color: #2E3440;
+  --overview-bg-color: #ECEFF4;
+  --overview-fg-color: #2E3440;
 }

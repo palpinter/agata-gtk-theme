@@ -4011,24 +4011,24 @@ colorswatch overlay:hover {
   box-shadow: 0 0 0 2px #81A1C1;
 }
 
-colorswatch#3B4252-color-button {
+colorswatch#add-color-button {
   border-radius: 8px 0 0 8px;
 }
 
-colorswatch#3B4252-color-button:only-child {
+colorswatch#add-color-button:only-child {
   border-radius: 8px;
 }
 
-colorswatch#3B4252-color-button overlay {
+colorswatch#add-color-button overlay {
   background-color: rgba(46, 52, 64, 0.05);
 }
 
-colorswatch#3B4252-color-button overlay:hover {
+colorswatch#add-color-button overlay:hover {
   background-color: rgba(46, 52, 64, 0.12);
   box-shadow: none;
 }
 
-colorswatch#3B4252-color-button overlay:active {
+colorswatch#add-color-button overlay:active {
   background-color: rgba(46, 52, 64, 0.3);
 }
 

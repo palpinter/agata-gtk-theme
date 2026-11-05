@@ -1,3 +1,2487 @@
+/* BEGIN Agata GNOME Shell 47+ compatibility layer
+   Generated from the GNOME Shell 51 default theme, recolored to Agata-Nord-Light.
+   Covers widgets added or renamed since the Jasper base (quick toggles with menus,
+   notification groups, toggle-switch knobs, scrollbar handles, lock-screen auth, ...)
+   and stock !important accent colors. Precomputed colors: works without st-mix().
+   Kept first in the file so Agata's own rules below win ties. */
+
+/* (A) GNOME 47+ widgets Agata does not style */
+.login-dialog-button.next-button,
+.login-dialog-button.a11y-button,
+.login-dialog-button.cancel-button,
+.login-dialog-button.switch-user-button,
+.login-dialog-button.login-dialog-auth-menu-button,
+.login-dialog-button.login-dialog-session-list-button,
+.message-notification-group .message-collapse-button {
+  color: #2e3440;
+  background-color: #d5d9e0;
+}
+
+.login-dialog-button.next-button:focus,
+.login-dialog-button.a11y-button:focus,
+.login-dialog-button.cancel-button:focus,
+.login-dialog-button.switch-user-button:focus,
+.login-dialog-button.login-dialog-auth-menu-button:focus,
+.login-dialog-button.login-dialog-session-list-button:focus,
+.message-notification-group .message-collapse-button:focus {
+  color: #2e3440;
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  background-color: #cfd4dc;
+}
+
+.login-dialog-button.next-button:focus:hover,
+.login-dialog-button.a11y-button:focus:hover,
+.login-dialog-button.cancel-button:focus:hover,
+.login-dialog-button.switch-user-button:focus:hover,
+.login-dialog-button.login-dialog-auth-menu-button:focus:hover,
+.login-dialog-button.login-dialog-session-list-button:focus:hover,
+.message-notification-group .message-collapse-button:focus:hover {
+  background-color: #c3cad4;
+}
+
+.login-dialog-button.next-button:hover,
+.login-dialog-button.a11y-button:hover,
+.login-dialog-button.cancel-button:hover,
+.login-dialog-button.switch-user-button:hover,
+.login-dialog-button.login-dialog-auth-menu-button:hover,
+.login-dialog-button.login-dialog-session-list-button:hover,
+.message-notification-group .message-collapse-button:hover {
+  color: #2e3440;
+  background-color: #c9ced8;
+}
+
+.login-dialog-button.next-button:insensitive,
+.login-dialog-button.a11y-button:insensitive,
+.login-dialog-button.cancel-button:insensitive,
+.login-dialog-button.switch-user-button:insensitive,
+.login-dialog-button.login-dialog-auth-menu-button:insensitive,
+.login-dialog-button.login-dialog-session-list-button:insensitive,
+.message-notification-group .message-collapse-button:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+  background-color: #dde1e7;
+}
+
+.login-dialog-button.next-button:selected,
+.login-dialog-button.a11y-button:selected,
+.login-dialog-button.cancel-button:selected,
+.login-dialog-button.switch-user-button:selected,
+.login-dialog-button.login-dialog-auth-menu-button:selected,
+.login-dialog-button.login-dialog-session-list-button:selected,
+.message-notification-group .message-collapse-button:selected,
+.login-dialog-button.next-button:active,
+.login-dialog-button.a11y-button:active,
+.login-dialog-button.cancel-button:active,
+.login-dialog-button.switch-user-button:active,
+.login-dialog-button.login-dialog-auth-menu-button:active,
+.login-dialog-button.login-dialog-session-list-button:active,
+.message-notification-group .message-collapse-button:active {
+  color: #2e3440;
+  background-color: #bac1cd;
+}
+
+.login-dialog-button.next-button:selected:hover,
+.login-dialog-button.a11y-button:selected:hover,
+.login-dialog-button.cancel-button:selected:hover,
+.login-dialog-button.switch-user-button:selected:hover,
+.login-dialog-button.login-dialog-auth-menu-button:selected:hover,
+.login-dialog-button.login-dialog-session-list-button:selected:hover,
+.message-notification-group .message-collapse-button:selected:hover,
+.login-dialog-button.next-button:active:hover,
+.login-dialog-button.a11y-button:active:hover,
+.login-dialog-button.cancel-button:active:hover,
+.login-dialog-button.switch-user-button:active:hover,
+.login-dialog-button.login-dialog-auth-menu-button:active:hover,
+.login-dialog-button.login-dialog-session-list-button:active:hover,
+.message-notification-group .message-collapse-button:active:hover {
+  background-color: #aeb6c4;
+}
+
+.login-dialog-button.next-button:selected:focus,
+.login-dialog-button.a11y-button:selected:focus,
+.login-dialog-button.cancel-button:selected:focus,
+.login-dialog-button.switch-user-button:selected:focus,
+.login-dialog-button.login-dialog-auth-menu-button:selected:focus,
+.login-dialog-button.login-dialog-session-list-button:selected:focus,
+.message-notification-group .message-collapse-button:selected:focus,
+.login-dialog-button.next-button:active:focus,
+.login-dialog-button.a11y-button:active:focus,
+.login-dialog-button.cancel-button:active:focus,
+.login-dialog-button.switch-user-button:active:focus,
+.login-dialog-button.login-dialog-auth-menu-button:active:focus,
+.login-dialog-button.login-dialog-session-list-button:active:focus,
+.message-notification-group .message-collapse-button:active:focus {
+  background-color: #b5bdca;
+}
+
+.login-dialog-button.next-button:checked,
+.login-dialog-button.a11y-button:checked,
+.login-dialog-button.cancel-button:checked,
+.login-dialog-button.switch-user-button:checked,
+.login-dialog-button.login-dialog-auth-menu-button:checked,
+.login-dialog-button.login-dialog-session-list-button:checked,
+.message-notification-group .message-collapse-button:checked {
+  color: #2e3440;
+  background-color: #bdc3cf;
+}
+
+.login-dialog-button.next-button:checked:hover,
+.login-dialog-button.a11y-button:checked:hover,
+.login-dialog-button.cancel-button:checked:hover,
+.login-dialog-button.switch-user-button:checked:hover,
+.login-dialog-button.login-dialog-auth-menu-button:checked:hover,
+.login-dialog-button.login-dialog-session-list-button:checked:hover,
+.message-notification-group .message-collapse-button:checked:hover {
+  background-color: #b1b9c6;
+}
+
+.login-dialog-button.next-button:checked:active,
+.login-dialog-button.a11y-button:checked:active,
+.login-dialog-button.cancel-button:checked:active,
+.login-dialog-button.switch-user-button:checked:active,
+.login-dialog-button.login-dialog-auth-menu-button:checked:active,
+.login-dialog-button.login-dialog-session-list-button:checked:active,
+.message-notification-group .message-collapse-button:checked:active {
+  background-color: #a2abbc;
+}
+
+.icon-button.flat,
+.flat.login-dialog-button.next-button,
+.flat.login-dialog-button.a11y-button,
+.flat.login-dialog-button.cancel-button,
+.flat.login-dialog-button.switch-user-button,
+.flat.login-dialog-button.login-dialog-auth-menu-button,
+.flat.login-dialog-button.login-dialog-session-list-button,
+.flat.screenshot-ui-show-pointer-button,
+.message .message-header .flat.message-expand-button,
+.message .message-header .flat.message-close-button,
+.message-notification-group .flat.message-collapse-button,
+.button.flat {
+  color: #2e3440;
+  background-color: #e5e9f0;
+}
+
+.icon-button.flat:focus,
+.flat.login-dialog-button.next-button:focus,
+.flat.login-dialog-button.a11y-button:focus,
+.flat.login-dialog-button.cancel-button:focus,
+.flat.login-dialog-button.switch-user-button:focus,
+.flat.login-dialog-button.login-dialog-auth-menu-button:focus,
+.flat.login-dialog-button.login-dialog-session-list-button:focus,
+.flat.screenshot-ui-show-pointer-button:focus,
+.message .message-header .flat.message-expand-button:focus,
+.message .message-header .flat.message-close-button:focus,
+.message-notification-group .flat.message-collapse-button:focus,
+.button.flat:focus {
+  color: #2e3440;
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  background-color: rgba(193, 202, 213, 0.287);
+}
+
+.icon-button.flat:focus:hover,
+.flat.login-dialog-button.next-button:focus:hover,
+.flat.login-dialog-button.a11y-button:focus:hover,
+.flat.login-dialog-button.cancel-button:focus:hover,
+.flat.login-dialog-button.switch-user-button:focus:hover,
+.flat.login-dialog-button.login-dialog-auth-menu-button:focus:hover,
+.flat.login-dialog-button.login-dialog-session-list-button:focus:hover,
+.flat.screenshot-ui-show-pointer-button:focus:hover,
+.message .message-header .flat.message-expand-button:focus:hover,
+.message .message-header .flat.message-close-button:focus:hover,
+.message-notification-group .flat.message-collapse-button:focus:hover,
+.button.flat:focus:hover {
+  background-color: #c9d1df;
+}
+
+.icon-button.flat:hover,
+.flat.login-dialog-button.next-button:hover,
+.flat.login-dialog-button.a11y-button:hover,
+.flat.login-dialog-button.cancel-button:hover,
+.flat.login-dialog-button.switch-user-button:hover,
+.flat.login-dialog-button.login-dialog-auth-menu-button:hover,
+.flat.login-dialog-button.login-dialog-session-list-button:hover,
+.flat.screenshot-ui-show-pointer-button:hover,
+.message .message-header .flat.message-expand-button:hover,
+.message .message-header .flat.message-close-button:hover,
+.message-notification-group .flat.message-collapse-button:hover,
+.button.flat:hover {
+  color: #2e3440;
+  background-color: #ced6e3;
+}
+
+.icon-button.flat:insensitive,
+.flat.login-dialog-button.next-button:insensitive,
+.flat.login-dialog-button.a11y-button:insensitive,
+.flat.login-dialog-button.cancel-button:insensitive,
+.flat.login-dialog-button.switch-user-button:insensitive,
+.flat.login-dialog-button.login-dialog-auth-menu-button:insensitive,
+.flat.login-dialog-button.login-dialog-session-list-button:insensitive,
+.flat.screenshot-ui-show-pointer-button:insensitive,
+.message .message-header .flat.message-expand-button:insensitive,
+.message .message-header .flat.message-close-button:insensitive,
+.message-notification-group .flat.message-collapse-button:insensitive,
+.button.flat:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+  background-color: #e5e9f0;
+}
+
+.icon-button.flat:selected,
+.flat.login-dialog-button.next-button:selected,
+.flat.login-dialog-button.a11y-button:selected,
+.flat.login-dialog-button.cancel-button:selected,
+.flat.login-dialog-button.switch-user-button:selected,
+.flat.login-dialog-button.login-dialog-auth-menu-button:selected,
+.flat.login-dialog-button.login-dialog-session-list-button:selected,
+.flat.screenshot-ui-show-pointer-button:selected,
+.message .message-header .flat.message-expand-button:selected,
+.message .message-header .flat.message-close-button:selected,
+.message-notification-group .flat.message-collapse-button:selected,
+.button.flat:selected,
+.icon-button.flat:active,
+.flat.login-dialog-button.next-button:active,
+.flat.login-dialog-button.a11y-button:active,
+.flat.login-dialog-button.cancel-button:active,
+.flat.login-dialog-button.switch-user-button:active,
+.flat.login-dialog-button.login-dialog-auth-menu-button:active,
+.flat.login-dialog-button.login-dialog-session-list-button:active,
+.flat.screenshot-ui-show-pointer-button:active,
+.message .message-header .flat.message-expand-button:active,
+.message .message-header .flat.message-close-button:active,
+.message-notification-group .flat.message-collapse-button:active,
+.button.flat:active {
+  color: #2e3440;
+  background-color: #c8d0df;
+}
+
+.icon-button.flat:selected:hover,
+.flat.login-dialog-button.next-button:selected:hover,
+.flat.login-dialog-button.a11y-button:selected:hover,
+.flat.login-dialog-button.cancel-button:selected:hover,
+.flat.login-dialog-button.switch-user-button:selected:hover,
+.flat.login-dialog-button.login-dialog-auth-menu-button:selected:hover,
+.flat.login-dialog-button.login-dialog-session-list-button:selected:hover,
+.flat.screenshot-ui-show-pointer-button:selected:hover,
+.message .message-header .flat.message-expand-button:selected:hover,
+.message .message-header .flat.message-close-button:selected:hover,
+.message-notification-group .flat.message-collapse-button:selected:hover,
+.button.flat:selected:hover,
+.icon-button.flat:active:hover,
+.flat.login-dialog-button.next-button:active:hover,
+.flat.login-dialog-button.a11y-button:active:hover,
+.flat.login-dialog-button.cancel-button:active:hover,
+.flat.login-dialog-button.switch-user-button:active:hover,
+.flat.login-dialog-button.login-dialog-auth-menu-button:active:hover,
+.flat.login-dialog-button.login-dialog-session-list-button:active:hover,
+.flat.screenshot-ui-show-pointer-button:active:hover,
+.message .message-header .flat.message-expand-button:active:hover,
+.message .message-header .flat.message-close-button:active:hover,
+.message-notification-group .flat.message-collapse-button:active:hover,
+.button.flat:active:hover {
+  background-color: #b1bdd2;
+}
+
+.icon-button.flat:selected:focus,
+.flat.login-dialog-button.next-button:selected:focus,
+.flat.login-dialog-button.a11y-button:selected:focus,
+.flat.login-dialog-button.cancel-button:selected:focus,
+.flat.login-dialog-button.switch-user-button:selected:focus,
+.flat.login-dialog-button.login-dialog-auth-menu-button:selected:focus,
+.flat.login-dialog-button.login-dialog-session-list-button:selected:focus,
+.flat.screenshot-ui-show-pointer-button:selected:focus,
+.message .message-header .flat.message-expand-button:selected:focus,
+.message .message-header .flat.message-close-button:selected:focus,
+.message-notification-group .flat.message-collapse-button:selected:focus,
+.button.flat:selected:focus,
+.icon-button.flat:active:focus,
+.flat.login-dialog-button.next-button:active:focus,
+.flat.login-dialog-button.a11y-button:active:focus,
+.flat.login-dialog-button.cancel-button:active:focus,
+.flat.login-dialog-button.switch-user-button:active:focus,
+.flat.login-dialog-button.login-dialog-auth-menu-button:active:focus,
+.flat.login-dialog-button.login-dialog-session-list-button:active:focus,
+.flat.screenshot-ui-show-pointer-button:active:focus,
+.message .message-header .flat.message-expand-button:active:focus,
+.message .message-header .flat.message-close-button:active:focus,
+.message-notification-group .flat.message-collapse-button:active:focus,
+.button.flat:active:focus {
+  background-color: #c3ccdb;
+}
+
+.icon-button.flat:checked,
+.flat.login-dialog-button.next-button:checked,
+.flat.login-dialog-button.a11y-button:checked,
+.flat.login-dialog-button.cancel-button:checked,
+.flat.login-dialog-button.switch-user-button:checked,
+.flat.login-dialog-button.login-dialog-auth-menu-button:checked,
+.flat.login-dialog-button.login-dialog-session-list-button:checked,
+.flat.screenshot-ui-show-pointer-button:checked,
+.message .message-header .flat.message-expand-button:checked,
+.message .message-header .flat.message-close-button:checked,
+.message-notification-group .flat.message-collapse-button:checked,
+.button.flat:checked {
+  color: #2e3440;
+  background-color: #cbd3e1;
+}
+
+.icon-button.flat:checked:hover,
+.flat.login-dialog-button.next-button:checked:hover,
+.flat.login-dialog-button.a11y-button:checked:hover,
+.flat.login-dialog-button.cancel-button:checked:hover,
+.flat.login-dialog-button.switch-user-button:checked:hover,
+.flat.login-dialog-button.login-dialog-auth-menu-button:checked:hover,
+.flat.login-dialog-button.login-dialog-session-list-button:checked:hover,
+.flat.screenshot-ui-show-pointer-button:checked:hover,
+.message .message-header .flat.message-expand-button:checked:hover,
+.message .message-header .flat.message-close-button:checked:hover,
+.message-notification-group .flat.message-collapse-button:checked:hover,
+.button.flat:checked:hover {
+  background-color: #b4c0d4;
+}
+
+.icon-button.flat:checked:active,
+.flat.login-dialog-button.next-button:checked:active,
+.flat.login-dialog-button.a11y-button:checked:active,
+.flat.login-dialog-button.cancel-button:checked:active,
+.flat.login-dialog-button.switch-user-button:checked:active,
+.flat.login-dialog-button.login-dialog-auth-menu-button:checked:active,
+.flat.login-dialog-button.login-dialog-session-list-button:checked:active,
+.flat.screenshot-ui-show-pointer-button:checked:active,
+.message .message-header .flat.message-expand-button:checked:active,
+.message .message-header .flat.message-close-button:checked:active,
+.message-notification-group .flat.message-collapse-button:checked:active,
+.button.flat:checked:active {
+  background-color: #aebad0;
+}
+
+.keyboard-brightness-level .button:checked,
+.icon-button.default,
+.default.login-dialog-button.next-button,
+.default.login-dialog-button.a11y-button,
+.default.login-dialog-button.cancel-button,
+.default.login-dialog-button.switch-user-button,
+.default.login-dialog-button.login-dialog-auth-menu-button,
+.default.login-dialog-button.login-dialog-session-list-button,
+.default.screenshot-ui-show-pointer-button,
+.message .message-header .default.message-expand-button,
+.message .message-header .default.message-close-button,
+.message-notification-group .default.message-collapse-button,
+.calendar .calendar-month-header .default.pager-button,
+.button.default {
+  color: #2e3440;
+  background-color: #81a1c1;
+}
+
+.keyboard-brightness-level .button:focus:checked,
+.icon-button.default:focus,
+.default.login-dialog-button.next-button:focus,
+.default.login-dialog-button.a11y-button:focus,
+.default.login-dialog-button.cancel-button:focus,
+.default.login-dialog-button.switch-user-button:focus,
+.default.login-dialog-button.login-dialog-auth-menu-button:focus,
+.default.login-dialog-button.login-dialog-session-list-button:focus,
+.default.screenshot-ui-show-pointer-button:focus,
+.message .message-header .default.message-expand-button:focus,
+.message .message-header .default.message-close-button:focus,
+.message-notification-group .default.message-collapse-button:focus,
+.calendar .calendar-month-header .default.pager-button:focus,
+.button.default:focus {
+  color: #2e3440;
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(56, 84, 113, 0.8) !important;
+  background-color: #7f9fbe;
+}
+
+.keyboard-brightness-level .button:focus:hover:checked,
+.icon-button.default:focus:hover,
+.default.login-dialog-button.next-button:focus:hover,
+.default.login-dialog-button.a11y-button:focus:hover,
+.default.login-dialog-button.cancel-button:focus:hover,
+.default.login-dialog-button.switch-user-button:focus:hover,
+.default.login-dialog-button.login-dialog-auth-menu-button:focus:hover,
+.default.login-dialog-button.login-dialog-session-list-button:focus:hover,
+.default.screenshot-ui-show-pointer-button:focus:hover,
+.message .message-header .default.message-expand-button:focus:hover,
+.message .message-header .default.message-close-button:focus:hover,
+.message-notification-group .default.message-collapse-button:focus:hover,
+.calendar .calendar-month-header .default.pager-button:focus:hover,
+.button.default:focus:hover {
+  background-color: #7295b8;
+}
+
+.keyboard-brightness-level .button:hover:checked,
+.icon-button.default:hover,
+.default.login-dialog-button.next-button:hover,
+.default.login-dialog-button.a11y-button:hover,
+.default.login-dialog-button.cancel-button:hover,
+.default.login-dialog-button.switch-user-button:hover,
+.default.login-dialog-button.login-dialog-auth-menu-button:hover,
+.default.login-dialog-button.login-dialog-session-list-button:hover,
+.default.screenshot-ui-show-pointer-button:hover,
+.message .message-header .default.message-expand-button:hover,
+.message .message-header .default.message-close-button:hover,
+.message-notification-group .default.message-collapse-button:hover,
+.calendar .calendar-month-header .default.pager-button:hover,
+.button.default:hover {
+  color: #2e3440;
+  background-color: #7397ba;
+}
+
+.keyboard-brightness-level .button:insensitive:checked,
+.icon-button.default:insensitive,
+.default.login-dialog-button.next-button:insensitive,
+.default.login-dialog-button.a11y-button:insensitive,
+.default.login-dialog-button.cancel-button:insensitive,
+.default.login-dialog-button.switch-user-button:insensitive,
+.default.login-dialog-button.login-dialog-auth-menu-button:insensitive,
+.default.login-dialog-button.login-dialog-session-list-button:insensitive,
+.default.screenshot-ui-show-pointer-button:insensitive,
+.message .message-header .default.message-expand-button:insensitive,
+.message .message-header .default.message-close-button:insensitive,
+.message-notification-group .default.message-collapse-button:insensitive,
+.calendar .calendar-month-header .default.pager-button:insensitive,
+.button.default:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+  background-color: #8ba9c6;
+}
+
+.keyboard-brightness-level .button:active:checked,
+.icon-button.default:active,
+.default.login-dialog-button.next-button:active,
+.default.login-dialog-button.a11y-button:active,
+.default.login-dialog-button.cancel-button:active,
+.default.login-dialog-button.switch-user-button:active,
+.default.login-dialog-button.login-dialog-auth-menu-button:active,
+.default.login-dialog-button.login-dialog-session-list-button:active,
+.default.screenshot-ui-show-pointer-button:active,
+.message .message-header .default.message-expand-button:active,
+.message .message-header .default.message-close-button:active,
+.message-notification-group .default.message-collapse-button:active,
+.calendar .calendar-month-header .default.pager-button:active,
+.button.default:active {
+  color: #2e3440;
+  background-color: #628ab2;
+}
+
+.keyboard-brightness-level .button:active:hover:checked,
+.icon-button.default:active:hover,
+.default.login-dialog-button.next-button:active:hover,
+.default.login-dialog-button.a11y-button:active:hover,
+.default.login-dialog-button.cancel-button:active:hover,
+.default.login-dialog-button.switch-user-button:active:hover,
+.default.login-dialog-button.login-dialog-auth-menu-button:active:hover,
+.default.login-dialog-button.login-dialog-session-list-button:active:hover,
+.default.screenshot-ui-show-pointer-button:active:hover,
+.message .message-header .default.message-expand-button:active:hover,
+.message .message-header .default.message-close-button:active:hover,
+.message-notification-group .default.message-collapse-button:active:hover,
+.calendar .calendar-month-header .default.pager-button:active:hover,
+.button.default:active:hover {
+  background-color: #5580ab;
+}
+
+.keyboard-brightness-level .button:active:focus:checked,
+.icon-button.default:active:focus,
+.default.login-dialog-button.next-button:active:focus,
+.default.login-dialog-button.a11y-button:active:focus,
+.default.login-dialog-button.cancel-button:active:focus,
+.default.login-dialog-button.switch-user-button:active:focus,
+.default.login-dialog-button.login-dialog-auth-menu-button:active:focus,
+.default.login-dialog-button.login-dialog-session-list-button:active:focus,
+.default.screenshot-ui-show-pointer-button:active:focus,
+.message .message-header .default.message-expand-button:active:focus,
+.message .message-header .default.message-close-button:active:focus,
+.message-notification-group .default.message-collapse-button:active:focus,
+.calendar .calendar-month-header .default.pager-button:active:focus,
+.button.default:active:focus {
+  background-color: #6289b0;
+}
+
+.login-dialog-button.next-button,
+.login-dialog-button.a11y-button,
+.login-dialog-button.cancel-button,
+.login-dialog-button.switch-user-button,
+.login-dialog-button.login-dialog-auth-menu-button,
+.login-dialog-button.login-dialog-session-list-button {
+  color: #2e3440;
+  background-color: #d7dbe2;
+}
+
+.login-dialog-button.next-button:insensitive,
+.login-dialog-button.a11y-button:insensitive,
+.login-dialog-button.cancel-button:insensitive,
+.login-dialog-button.switch-user-button:insensitive,
+.login-dialog-button.login-dialog-auth-menu-button:insensitive,
+.login-dialog-button.login-dialog-session-list-button:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+  background-color: #e0e3e8;
+}
+
+.login-dialog-button.next-button:focus,
+.login-dialog-button.a11y-button:focus,
+.login-dialog-button.cancel-button:focus,
+.login-dialog-button.switch-user-button:focus,
+.login-dialog-button.login-dialog-auth-menu-button:focus,
+.login-dialog-button.login-dialog-session-list-button:focus {
+  color: #2e3440;
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  background-color: #d1d6dd;
+}
+
+.login-dialog-button.next-button:focus:hover,
+.login-dialog-button.a11y-button:focus:hover,
+.login-dialog-button.cancel-button:focus:hover,
+.login-dialog-button.switch-user-button:focus:hover,
+.login-dialog-button.login-dialog-auth-menu-button:focus:hover,
+.login-dialog-button.login-dialog-session-list-button:focus:hover {
+  background-color: #c6ccd5;
+}
+
+.login-dialog-button.next-button:hover,
+.login-dialog-button.a11y-button:hover,
+.login-dialog-button.cancel-button:hover,
+.login-dialog-button.switch-user-button:hover,
+.login-dialog-button.login-dialog-auth-menu-button:hover,
+.login-dialog-button.login-dialog-session-list-button:hover {
+  color: #2e3440;
+  background-color: #cbd0d9;
+}
+
+.login-dialog-button.next-button:active,
+.login-dialog-button.a11y-button:active,
+.login-dialog-button.cancel-button:active,
+.login-dialog-button.switch-user-button:active,
+.login-dialog-button.login-dialog-auth-menu-button:active,
+.login-dialog-button.login-dialog-session-list-button:active {
+  color: #2e3440;
+  background-color: #bcc3ce;
+}
+
+.login-dialog-button.next-button:active:hover,
+.login-dialog-button.a11y-button:active:hover,
+.login-dialog-button.cancel-button:active:hover,
+.login-dialog-button.switch-user-button:active:hover,
+.login-dialog-button.login-dialog-auth-menu-button:active:hover,
+.login-dialog-button.login-dialog-session-list-button:active:hover {
+  background-color: #b1b8c5;
+}
+
+.login-dialog-button.next-button:active:focus,
+.login-dialog-button.a11y-button:active:focus,
+.login-dialog-button.cancel-button:active:focus,
+.login-dialog-button.switch-user-button:active:focus,
+.login-dialog-button.login-dialog-auth-menu-button:active:focus,
+.login-dialog-button.login-dialog-session-list-button:active:focus {
+  background-color: #b8bfcb;
+}
+
+.login-dialog-button.next-button:checked,
+.login-dialog-button.a11y-button:checked,
+.login-dialog-button.cancel-button:checked,
+.login-dialog-button.switch-user-button:checked,
+.login-dialog-button.login-dialog-auth-menu-button:checked,
+.login-dialog-button.login-dialog-session-list-button:checked {
+  color: #2e3440;
+  background-color: #bfc5d0;
+}
+
+.login-dialog-button.next-button:checked:hover,
+.login-dialog-button.a11y-button:checked:hover,
+.login-dialog-button.cancel-button:checked:hover,
+.login-dialog-button.switch-user-button:checked:hover,
+.login-dialog-button.login-dialog-auth-menu-button:checked:hover,
+.login-dialog-button.login-dialog-session-list-button:checked:hover {
+  background-color: #b4bbc8;
+}
+
+.login-dialog-button.next-button:checked:active,
+.login-dialog-button.a11y-button:checked:active,
+.login-dialog-button.cancel-button:checked:active,
+.login-dialog-button.switch-user-button:checked:active,
+.login-dialog-button.login-dialog-auth-menu-button:checked:active,
+.login-dialog-button.login-dialog-session-list-button:checked:active {
+  background-color: #a5aebd;
+}
+
+.parental-controls-shield .parental-controls-shield-button,
+.unlock-dialog .message-notification-group .message-collapse-button,
+.message-notification-group .unlock-dialog .message-collapse-button,
+.unlock-dialog .login-dialog-button.next-button,
+.unlock-dialog .login-dialog-button.a11y-button,
+.unlock-dialog .login-dialog-button.cancel-button,
+.unlock-dialog .login-dialog-button.switch-user-button,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button,
+.unlock-dialog .login-button,
+.unlock-dialog .web-login-prompt-button,
+.unlock-dialog .login-dialog-auth-list-item,
+.unlock-dialog .login-dialog-auth-list-title {
+  color: #2e3440;
+  background-color: rgba(46, 52, 64, 0.1);
+}
+
+.parental-controls-shield .parental-controls-shield-button:focus,
+.unlock-dialog .message-notification-group .message-collapse-button:focus,
+.message-notification-group .unlock-dialog .message-collapse-button:focus,
+.unlock-dialog .login-dialog-button.next-button:focus,
+.unlock-dialog .login-dialog-button.a11y-button:focus,
+.unlock-dialog .login-dialog-button.cancel-button:focus,
+.unlock-dialog .login-dialog-button.switch-user-button:focus,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button:focus,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button:focus,
+.unlock-dialog .login-button:focus,
+.unlock-dialog .web-login-prompt-button:focus,
+.unlock-dialog .login-dialog-auth-list-item:focus,
+.unlock-dialog .login-dialog-auth-list-title:focus {
+  color: #2e3440;
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+  background-color: rgba(71, 85, 103, 0.145);
+}
+
+.parental-controls-shield .parental-controls-shield-button:focus:hover,
+.unlock-dialog .message-notification-group .message-collapse-button:focus:hover,
+.message-notification-group .unlock-dialog .message-collapse-button:focus:hover,
+.unlock-dialog .login-dialog-button.next-button:focus:hover,
+.unlock-dialog .login-dialog-button.a11y-button:focus:hover,
+.unlock-dialog .login-dialog-button.cancel-button:focus:hover,
+.unlock-dialog .login-dialog-button.switch-user-button:focus:hover,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button:focus:hover,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button:focus:hover,
+.unlock-dialog .login-button:focus:hover,
+.unlock-dialog .web-login-prompt-button:focus:hover,
+.unlock-dialog .login-dialog-auth-list-item:focus:hover,
+.unlock-dialog .login-dialog-auth-list-title:focus:hover {
+  background-color: rgba(67, 80, 97, 0.173);
+}
+
+.parental-controls-shield .parental-controls-shield-button:hover,
+.unlock-dialog .message-notification-group .message-collapse-button:hover,
+.message-notification-group .unlock-dialog .message-collapse-button:hover,
+.unlock-dialog .login-dialog-button.next-button:hover,
+.unlock-dialog .login-dialog-button.a11y-button:hover,
+.unlock-dialog .login-dialog-button.cancel-button:hover,
+.unlock-dialog .login-dialog-button.switch-user-button:hover,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button:hover,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button:hover,
+.unlock-dialog .login-button:hover,
+.unlock-dialog .web-login-prompt-button:hover,
+.unlock-dialog .login-dialog-auth-list-item:hover,
+.unlock-dialog .login-dialog-auth-list-title:hover {
+  color: #2e3440;
+  background-color: rgba(46, 52, 64, 0.13);
+}
+
+.parental-controls-shield .parental-controls-shield-button:active,
+.unlock-dialog .message-notification-group .message-collapse-button:active,
+.message-notification-group .unlock-dialog .message-collapse-button:active,
+.unlock-dialog .login-dialog-button.next-button:active,
+.unlock-dialog .login-dialog-button.a11y-button:active,
+.unlock-dialog .login-dialog-button.cancel-button:active,
+.unlock-dialog .login-dialog-button.switch-user-button:active,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button:active,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button:active,
+.unlock-dialog .login-button:active,
+.unlock-dialog .web-login-prompt-button:active,
+.unlock-dialog .login-dialog-auth-list-item:active,
+.unlock-dialog .login-dialog-auth-list-title:active {
+  color: #2e3440;
+  background-color: rgba(46, 52, 64, 0.16);
+}
+
+.parental-controls-shield .parental-controls-shield-button:active:hover,
+.unlock-dialog .message-notification-group .message-collapse-button:active:hover,
+.message-notification-group .unlock-dialog .message-collapse-button:active:hover,
+.unlock-dialog .login-dialog-button.next-button:active:hover,
+.unlock-dialog .login-dialog-button.a11y-button:active:hover,
+.unlock-dialog .login-dialog-button.cancel-button:active:hover,
+.unlock-dialog .login-dialog-button.switch-user-button:active:hover,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button:active:hover,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button:active:hover,
+.unlock-dialog .login-button:active:hover,
+.unlock-dialog .web-login-prompt-button:active:hover,
+.unlock-dialog .login-dialog-auth-list-item:active:hover,
+.unlock-dialog .login-dialog-auth-list-title:active:hover {
+  background-color: rgba(46, 52, 64, 0.19);
+}
+
+.parental-controls-shield .parental-controls-shield-button:active:focus,
+.unlock-dialog .message-notification-group .message-collapse-button:active:focus,
+.message-notification-group .unlock-dialog .message-collapse-button:active:focus,
+.unlock-dialog .login-dialog-button.next-button:active:focus,
+.unlock-dialog .login-dialog-button.a11y-button:active:focus,
+.unlock-dialog .login-dialog-button.cancel-button:active:focus,
+.unlock-dialog .login-dialog-button.switch-user-button:active:focus,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button:active:focus,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button:active:focus,
+.unlock-dialog .login-button:active:focus,
+.unlock-dialog .web-login-prompt-button:active:focus,
+.unlock-dialog .login-dialog-auth-list-item:active:focus,
+.unlock-dialog .login-dialog-auth-list-title:active:focus {
+  background-color: rgba(65, 77, 93, 0.202);
+}
+
+.parental-controls-shield .parental-controls-shield-button:checked,
+.unlock-dialog .message-notification-group .message-collapse-button:checked,
+.message-notification-group .unlock-dialog .message-collapse-button:checked,
+.unlock-dialog .login-dialog-button.next-button:checked,
+.unlock-dialog .login-dialog-button.a11y-button:checked,
+.unlock-dialog .login-dialog-button.cancel-button:checked,
+.unlock-dialog .login-dialog-button.switch-user-button:checked,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button:checked,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button:checked,
+.unlock-dialog .login-button:checked,
+.unlock-dialog .web-login-prompt-button:checked,
+.unlock-dialog .login-dialog-auth-list-item:checked,
+.unlock-dialog .login-dialog-auth-list-title:checked {
+  color: #2e3440;
+  background-color: #bdc3cf;
+}
+
+.parental-controls-shield .parental-controls-shield-button:checked:hover,
+.unlock-dialog .message-notification-group .message-collapse-button:checked:hover,
+.message-notification-group .unlock-dialog .message-collapse-button:checked:hover,
+.unlock-dialog .login-dialog-button.next-button:checked:hover,
+.unlock-dialog .login-dialog-button.a11y-button:checked:hover,
+.unlock-dialog .login-dialog-button.cancel-button:checked:hover,
+.unlock-dialog .login-dialog-button.switch-user-button:checked:hover,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button:checked:hover,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button:checked:hover,
+.unlock-dialog .login-button:checked:hover,
+.unlock-dialog .web-login-prompt-button:checked:hover,
+.unlock-dialog .login-dialog-auth-list-item:checked:hover,
+.unlock-dialog .login-dialog-auth-list-title:checked:hover {
+  background-color: #b1b9c6;
+}
+
+.parental-controls-shield .parental-controls-shield-button:checked:active,
+.unlock-dialog .message-notification-group .message-collapse-button:checked:active,
+.message-notification-group .unlock-dialog .message-collapse-button:checked:active,
+.unlock-dialog .login-dialog-button.next-button:checked:active,
+.unlock-dialog .login-dialog-button.a11y-button:checked:active,
+.unlock-dialog .login-dialog-button.cancel-button:checked:active,
+.unlock-dialog .login-dialog-button.switch-user-button:checked:active,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button:checked:active,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button:checked:active,
+.unlock-dialog .login-button:checked:active,
+.unlock-dialog .web-login-prompt-button:checked:active,
+.unlock-dialog .login-dialog-auth-list-item:checked:active,
+.unlock-dialog .login-dialog-auth-list-title:checked:active {
+  background-color: #a2abbc;
+}
+
+.parental-controls-shield .parental-controls-shield-button:insensitive,
+.unlock-dialog .message-notification-group .message-collapse-button:insensitive,
+.message-notification-group .unlock-dialog .message-collapse-button:insensitive,
+.unlock-dialog .login-dialog-button.next-button:insensitive,
+.unlock-dialog .login-dialog-button.a11y-button:insensitive,
+.unlock-dialog .login-dialog-button.cancel-button:insensitive,
+.unlock-dialog .login-dialog-button.switch-user-button:insensitive,
+.unlock-dialog .login-dialog-button.login-dialog-auth-menu-button:insensitive,
+.unlock-dialog .login-dialog-button.login-dialog-session-list-button:insensitive,
+.unlock-dialog .login-button:insensitive,
+.unlock-dialog .web-login-prompt-button:insensitive,
+.unlock-dialog .login-dialog-auth-list-item:insensitive,
+.unlock-dialog .login-dialog-auth-list-title:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+  background-color: rgba(46, 52, 64, 0.1);
+}
+
+StScrollBar > .vhandle,
+StScrollBar > .hhandle {
+  background-color: #aeb3bb;
+  border-color: rgba(0, 0, 0, 0);
+}
+
+StScrollBar > .vhandle:hover,
+StScrollBar > .hhandle:hover {
+  background-color: #898e98;
+}
+
+StScrollBar > .vhandle:active,
+StScrollBar > .hhandle:active {
+  background-color: #9ca1aa;
+}
+
+.message-notification-group .message-collapse-button {
+  color: #2e3440;
+  background-color: rgba(46, 52, 64, 0.2);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.message-notification-group .message-collapse-button:hover {
+  background-color: rgba(46, 52, 64, 0.3);
+}
+
+.message-notification-group .message-collapse-button:active {
+  background-color: rgba(46, 52, 64, 0.2);
+}
+
+.osd-break-countdown-label {
+  background-color: #81a1c1;
+  color: #2e3440;
+}
+
+.ws-switcher-indicator {
+  background-color: rgba(46, 52, 64, 0.5);
+}
+
+.ws-switcher-indicator:active {
+  background-color: #2e3440;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button {
+  color: #2e3440;
+  background-color: #c3c8d0;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:focus {
+  color: #2e3440;
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  background-color: #bec4cc;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:focus:hover {
+  background-color: #b4bac4;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:hover {
+  color: #2e3440;
+  background-color: #b8bdc7;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:active {
+  color: #2e3440;
+  background-color: #aab0bb;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:active:hover {
+  background-color: #9ea5b2;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:active:focus {
+  background-color: #a6adb9;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:checked {
+  color: #2e3440;
+  background-color: #7591ae;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:checked:focus {
+  color: #2e3440;
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(56, 84, 113, 0.8) !important;
+  background-color: #748fac;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:checked:focus:hover {
+  background-color: #6786a5;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:checked:hover {
+  color: #2e3440;
+  background-color: #6886a6;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:checked:active {
+  color: #2e3440;
+  background-color: #5a7a9a;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:checked:active:hover {
+  background-color: #536f8d;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:checked:active:focus {
+  background-color: #5b7999;
+}
+
+.quick-toggle-has-menu:checked .quick-toggle-separator {
+  background-color: #68809a;
+}
+
+.quick-toggle-has-menu .quick-toggle-separator {
+  background-color: rgba(46, 52, 64, 0.25);
+}
+
+.background-app-item .login-dialog-button.next-button,
+.background-app-item .login-dialog-button.a11y-button,
+.background-app-item .login-dialog-button.cancel-button,
+.background-app-item .login-dialog-button.switch-user-button,
+.background-app-item .login-dialog-button.login-dialog-auth-menu-button,
+.background-app-item .login-dialog-button.login-dialog-session-list-button,
+.background-app-item .message-notification-group .message-collapse-button,
+.message-notification-group .background-app-item .message-collapse-button {
+  background-color: rgba(46, 52, 64, 0.13);
+}
+
+.background-app-item .login-dialog-button.next-button:hover,
+.background-app-item .login-dialog-button.a11y-button:hover,
+.background-app-item .login-dialog-button.cancel-button:hover,
+.background-app-item .login-dialog-button.switch-user-button:hover,
+.background-app-item .login-dialog-button.login-dialog-auth-menu-button:hover,
+.background-app-item .login-dialog-button.login-dialog-session-list-button:hover,
+.background-app-item .message-notification-group .message-collapse-button:hover,
+.message-notification-group .background-app-item .message-collapse-button:hover {
+  background-color: rgba(46, 52, 64, 0.22);
+}
+
+.background-app-item .login-dialog-button.next-button:active,
+.background-app-item .login-dialog-button.a11y-button:active,
+.background-app-item .login-dialog-button.cancel-button:active,
+.background-app-item .login-dialog-button.switch-user-button:active,
+.background-app-item .login-dialog-button.login-dialog-auth-menu-button:active,
+.background-app-item .login-dialog-button.login-dialog-session-list-button:active,
+.background-app-item .message-notification-group .message-collapse-button:active,
+.message-notification-group .background-app-item .message-collapse-button:active {
+  background-color: rgba(46, 52, 64, 0.31);
+}
+
+.app-folder-dialog .login-dialog-button.next-button,
+.app-folder-dialog .login-dialog-button.a11y-button,
+.app-folder-dialog .login-dialog-button.cancel-button,
+.app-folder-dialog .login-dialog-button.switch-user-button,
+.app-folder-dialog .login-dialog-button.login-dialog-auth-menu-button,
+.app-folder-dialog .login-dialog-button.login-dialog-session-list-button,
+.app-folder-dialog .message-notification-group .message-collapse-button,
+.message-notification-group .app-folder-dialog .message-collapse-button {
+  color: #2e3440;
+  background-color: #d3d7df;
+}
+
+.app-folder-dialog .login-dialog-button.next-button:hover,
+.app-folder-dialog .login-dialog-button.a11y-button:hover,
+.app-folder-dialog .login-dialog-button.cancel-button:hover,
+.app-folder-dialog .login-dialog-button.switch-user-button:hover,
+.app-folder-dialog .login-dialog-button.login-dialog-auth-menu-button:hover,
+.app-folder-dialog .login-dialog-button.login-dialog-session-list-button:hover,
+.app-folder-dialog .message-notification-group .message-collapse-button:hover,
+.message-notification-group .app-folder-dialog .message-collapse-button:hover {
+  color: #2e3440;
+  background-color: #c8cdd6;
+}
+
+.app-folder-dialog .login-dialog-button.next-button:active,
+.app-folder-dialog .login-dialog-button.a11y-button:active,
+.app-folder-dialog .login-dialog-button.cancel-button:active,
+.app-folder-dialog .login-dialog-button.switch-user-button:active,
+.app-folder-dialog .login-dialog-button.login-dialog-auth-menu-button:active,
+.app-folder-dialog .login-dialog-button.login-dialog-session-list-button:active,
+.app-folder-dialog .message-notification-group .message-collapse-button:active,
+.message-notification-group .app-folder-dialog .message-collapse-button:active {
+  color: #2e3440;
+  background-color: #b9c0cc;
+}
+
+.app-folder-dialog .login-dialog-button.next-button:active:hover,
+.app-folder-dialog .login-dialog-button.a11y-button:active:hover,
+.app-folder-dialog .login-dialog-button.cancel-button:active:hover,
+.app-folder-dialog .login-dialog-button.switch-user-button:active:hover,
+.app-folder-dialog .login-dialog-button.login-dialog-auth-menu-button:active:hover,
+.app-folder-dialog .login-dialog-button.login-dialog-session-list-button:active:hover,
+.app-folder-dialog .message-notification-group .message-collapse-button:active:hover,
+.message-notification-group .app-folder-dialog .message-collapse-button:active:hover {
+  background-color: #adb5c3;
+}
+
+.app-folder-dialog .login-dialog-button.next-button:active:focus,
+.app-folder-dialog .login-dialog-button.a11y-button:active:focus,
+.app-folder-dialog .login-dialog-button.cancel-button:active:focus,
+.app-folder-dialog .login-dialog-button.switch-user-button:active:focus,
+.app-folder-dialog .login-dialog-button.login-dialog-auth-menu-button:active:focus,
+.app-folder-dialog .login-dialog-button.login-dialog-session-list-button:active:focus,
+.app-folder-dialog .message-notification-group .message-collapse-button:active:focus,
+.message-notification-group .app-folder-dialog .message-collapse-button:active:focus {
+  background-color: #b4bcc8;
+}
+
+.keyboard-subkeys-boxpointer {
+  -arrow-background-color: #e8ebf2;
+  -arrow-border-color: #d6dae2;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login-dialog-button.next-button {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.login-dialog-auth-menu-button-popup .login-dialog-auth-menu-item-section-label {
+  color: #2e3440;
+}
+
+.login-dialog-auth-menu-button-popup .login-dialog-auth-menu-item-icon {
+  color: #2e3440;
+}
+
+.login-dialog-auth-menu-button-popup .login-dialog-auth-menu-item-box-name {
+  color: #2e3440;
+}
+
+.login-dialog-auth-menu-button-popup .login-dialog-auth-menu-item-box-description {
+  color: #2e3440;
+}
+
+.login-dialog-auth-menu-button-indicator {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.conflicting-session-dialog-content .conflicting-session-dialog-desc-warning {
+  color: #fbc02d;
+  background-color: rgba(251, 192, 45, 0.1);
+}
+
+.login-dialog .login-dialog-auth-list-title,
+.login-dialog .login-dialog-auth-list-item {
+  color: #2e3440;
+  background-color: #d5d9e1;
+}
+
+.login-dialog .login-dialog-auth-list-title:selected,
+.login-dialog .login-dialog-auth-list-title:focus,
+.login-dialog .login-dialog-auth-list-item:selected,
+.login-dialog .login-dialog-auth-list-item:focus {
+  color: #2e3440;
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  background-color: #cfd4dc;
+}
+
+.login-dialog .login-dialog-auth-list-title:selected:hover,
+.login-dialog .login-dialog-auth-list-title:focus:hover,
+.login-dialog .login-dialog-auth-list-item:selected:hover,
+.login-dialog .login-dialog-auth-list-item:focus:hover {
+  background-color: #c4cad4;
+}
+
+.login-dialog .login-dialog-auth-list-title:hover,
+.login-dialog .login-dialog-auth-list-item:hover {
+  color: #2e3440;
+  background-color: #c9ced8;
+}
+
+.login-dialog .login-dialog-auth-list-title:active,
+.login-dialog .login-dialog-auth-list-item:active {
+  color: #2e3440;
+  background-color: #bac1cd;
+}
+
+.login-dialog .login-dialog-auth-list-title:active:hover,
+.login-dialog .login-dialog-auth-list-item:active:hover {
+  background-color: #aeb6c5;
+}
+
+.login-dialog .login-dialog-auth-list-title:active:focus,
+.login-dialog .login-dialog-auth-list-item:active:focus {
+  background-color: #b6bdca;
+}
+
+.login-dialog .login-dialog-auth-list-title:insensitive,
+.login-dialog .login-dialog-auth-list-item:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+  background-color: #dee1e7;
+}
+
+.login-dialog .login-dialog-auth-list-title {
+  background-color: rgba(46, 52, 64, 0.02) !important;
+  color: #2e3440 !important;
+}
+
+.unlock-dialog .login-dialog-auth-list-title {
+  background-color: rgba(46, 52, 64, 0.15) !important;
+  color: #2e3440 !important;
+}
+
+.login-dialog-auth-list-item-title {
+  color: #2e3440;
+}
+
+.login-dialog-auth-list-item-subtitle {
+  color: #616671;
+}
+
+.login-dialog-item-icon {
+  color: #2e3440;
+}
+
+.login-dialog-item-icon:hover {
+  background-color: #e8ebf2;
+}
+
+.login-dialog-item-icon-popup-box .login-dialog-item-icon-popup-labels > :first-child {
+  color: #747983;
+}
+
+.login-dialog-item-icon-popup-box .login-dialog-item-icon-popup-labels > :last-child {
+  color: #2e3440;
+}
+
+.web-login-spinner {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.web-login-title-label {
+  color: #a5a5b7;
+}
+
+.web-login-url-label {
+  color: #2e3440;
+}
+
+.web-login-code-title-label {
+  color: #2e3440;
+}
+
+.web-login-code-label {
+  color: #2e3440;
+}
+
+.unlock-dialog .web-login-title-label,
+.unlock-dialog .web-login-url-label,
+.unlock-dialog .web-login-url-label-long,
+.unlock-dialog .web-login-code-title-label,
+.unlock-dialog .web-login-code-label,
+.unlock-dialog .web-login-prompt {
+  color: #2e3440 !important;
+}
+
+.login-dialog .login-button,
+.login-dialog .web-login-prompt-button {
+  color: #2e3440;
+  background-color: #dbdee4;
+  color: #2e3440;
+}
+
+.login-dialog .login-button:selected,
+.login-dialog .login-button:focus,
+.login-dialog .web-login-prompt-button:selected,
+.login-dialog .web-login-prompt-button:focus {
+  color: #2e3440;
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  background-color: #d5d9df;
+}
+
+.login-dialog .login-button:selected:hover,
+.login-dialog .login-button:focus:hover,
+.login-dialog .web-login-prompt-button:selected:hover,
+.login-dialog .web-login-prompt-button:focus:hover {
+  background-color: #cacfd7;
+}
+
+.login-dialog .login-button:hover,
+.login-dialog .web-login-prompt-button:hover {
+  color: #2e3440;
+  background-color: #cfd4db;
+}
+
+.login-dialog .login-button:active,
+.login-dialog .web-login-prompt-button:active {
+  color: #2e3440;
+  background-color: #c1c6d0;
+}
+
+.login-dialog .login-button:active:hover,
+.login-dialog .web-login-prompt-button:active:hover {
+  background-color: #b5bcc7;
+}
+
+.login-dialog .login-button:active:focus,
+.login-dialog .web-login-prompt-button:active:focus {
+  background-color: #bcc2cd;
+}
+
+.login-dialog .login-button:insensitive,
+.login-dialog .web-login-prompt-button:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+  background-color: #e4e6ea;
+}
+
+.unlock-dialog .login-button,
+.unlock-dialog .web-login-prompt-button {
+  color: #2e3440;
+}
+
+.parental-controls-shield .parental-controls-shield-button {
+  color: #2e3440;
+  background-color: rgba(46, 52, 64, 0.1);
+}
+
+#unlockDialogNotifications > .vhandle,
+#unlockDialogNotifications > .hhandle {
+  background-color: rgba(229, 233, 240, 0.3);
+}
+
+#unlockDialogNotifications > .vhandle:hover,
+#unlockDialogNotifications > .vhandle:focus,
+#unlockDialogNotifications > .hhandle:hover,
+#unlockDialogNotifications > .hhandle:focus {
+  background-color: rgba(229, 233, 240, 0.5);
+}
+
+#unlockDialogNotifications > .vhandle:active,
+#unlockDialogNotifications > .hhandle:active {
+  background-color: rgba(129, 161, 193, 0.5);
+}
+
+/* (B) Stock !important colors that would override Agata */
+.icon-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.screenshot-ui-show-pointer-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.message .message-header .message-expand-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.message .message-header .message-close-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.calendar .calendar-day-heading:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.calendar .calendar-month-header .calendar-month-label:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.quick-toggle:focus:checked {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(56, 84, 113, 0.8) !important;
+}
+
+.quick-toggle-menu:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.message:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.events-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.world-clocks-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.weather-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.calendar {
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+
+.datemenu-today-button {
+  border-color: rgba(0, 0, 0, 0) !important;
+}
+
+.calendar:insensitive {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.datemenu-today-button:insensitive {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.calendar:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.datemenu-today-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.message .message-header .message-expand-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.message .message-header .message-close-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.screenshot-ui-show-pointer-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.screenshot-ui-type-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.login-dialog .login-dialog-prompt-entry:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.app-folder-dialog .folder-name-container .folder-name-entry:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.unlock-dialog-notifications-container .message StButton:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.unlock-dialog .button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.unlock-dialog .icon-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.unlock-dialog .calendar .calendar-month-header .pager-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.calendar .calendar-month-header .unlock-dialog .pager-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.unlock-dialog .message .message-header .message-expand-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.message .message-header .unlock-dialog .message-expand-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.unlock-dialog .message .message-header .message-close-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.message .message-header .unlock-dialog .message-close-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.unlock-dialog .screenshot-ui-show-pointer-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.unlock-dialog .login-dialog-prompt-entry:focus {
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+  box-shadow: inset 0 0 0 2px rgba(46, 52, 64, 0.2) !important;
+}
+
+.popup-menu-item:insensitive {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.popup-sub-menu .popup-menu-item:insensitive {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.switcher-list .item-box:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.quick-slider .slider-bin:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.list-search-result:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.search-provider-icon:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+#dash .dash-item-container .show-apps:focus .overview-icon {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+#dash .dash-item-container .overview-tile:focus .overview-icon {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+#dash .dash-item-container .grid-search-result:focus .overview-icon {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.overview-tile:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.grid-search-result:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.app-folder:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.app-folder-dialog .overview-tile:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.app-folder-dialog .grid-search-result:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.keyboard-key:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.word-suggestions StButton:insensitive {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.word-suggestions StButton:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.login-dialog-not-listed-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:selected {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:focus {
+  box-shadow: inset 0 0 0 2px rgba(96, 117, 141, 0.8) !important;
+}
+
+/* (D) Stock colors on styled elements where Agata leaves the property unset */
+.app-folder {
+  color: #2e3440;
+}
+
+.app-folder:active {
+  color: #2e3440;
+}
+
+.app-folder:checked {
+  color: #2e3440;
+}
+
+.app-folder:drop {
+  box-shadow: inset 0 0 0 2px rgba(129, 161, 193, 0.8);
+}
+
+.app-folder:focus {
+  color: #2e3440;
+}
+
+.app-folder:highlighted {
+  color: #2e3440;
+}
+
+.app-folder:hover {
+  color: #2e3440;
+}
+
+.app-folder:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.app-folder:selected {
+  color: #2e3440;
+}
+
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device {
+  color: #2e3440;
+}
+
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device:checked {
+  background-color: #cbd3e1;
+  color: #2e3440;
+}
+
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device:drop {
+  background-color: rgba(129, 161, 193, 0.2);
+  box-shadow: inset 0 0 0 2px rgba(129, 161, 193, 0.8);
+}
+
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device:focus {
+  color: #2e3440;
+}
+
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device:highlighted {
+  background-color: #cbd3e1;
+  color: #2e3440;
+}
+
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device:hover {
+  color: #2e3440;
+}
+
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device:insensitive {
+  background-color: #e5e9f0;
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device:selected {
+  background-color: #cbd3e1;
+  color: #2e3440;
+}
+
+.button {
+  background-color: #d5d9e0;
+  color: #2e3440;
+}
+
+.button:active {
+  background-color: #bac1cd;
+  color: #2e3440;
+}
+
+.button:active:focus {
+  background-color: #b5bdca;
+}
+
+.button:active:hover {
+  background-color: #aeb6c4;
+}
+
+.button:checked {
+  background-color: #bdc3cf;
+  color: #2e3440;
+}
+
+.button:checked:active {
+  background-color: #a2abbc;
+}
+
+.button:checked:hover {
+  background-color: #b1b9c6;
+}
+
+.button:focus {
+  background-color: #cfd4dc;
+  color: #2e3440;
+}
+
+.button:focus:hover {
+  background-color: #c3cad4;
+}
+
+.button:hover {
+  background-color: #c9ced8;
+  color: #2e3440;
+}
+
+.button:insensitive {
+  background-color: #dde1e7;
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.button:selected {
+  background-color: #bac1cd;
+  color: #2e3440;
+}
+
+.button:selected:focus {
+  background-color: #b5bdca;
+}
+
+.button:selected:hover {
+  background-color: #aeb6c4;
+}
+
+.calendar:active {
+  color: #2e3440;
+}
+
+.calendar:focus {
+  color: #2e3440;
+}
+
+.calendar:hover {
+  color: #2e3440;
+}
+
+.calendar:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.check-box:active StIcon {
+  border-color: rgba(46, 52, 64, 0.3);
+}
+
+.check-box:checked StIcon {
+  background-color: #81a1c1;
+  color: #2e3440;
+}
+
+.check-box:checked:active StIcon {
+  background-color: #99b3cd;
+  color: #3d4555;
+}
+
+.check-box:checked:hover StIcon {
+  background-color: #7094b9;
+  color: #232831;
+}
+
+.check-box:focus StBin {
+  box-shadow: inset 0 0 0 2px rgba(129, 161, 193, 0.35);
+}
+
+.check-box:hover StIcon {
+  border-color: rgba(46, 52, 64, 0.2);
+}
+
+.emoji-panel .keyboard-key:latched {
+  border-color: #7094b9;
+}
+
+.end-session-dialog .dialog-list-title {
+  background-color: rgba(251, 192, 45, 0.1);
+}
+
+.end-session-dialog .end-session-dialog-battery-warning {
+  background-color: rgba(251, 192, 45, 0.1);
+}
+
+.list-search-result:drop {
+  box-shadow: inset 0 0 0 2px rgba(129, 161, 193, 0.8);
+}
+
+.login-dialog {
+  color: #2e3440;
+}
+
+.login-dialog .login-dialog-prompt-entry {
+  background-color: #dbdfe7;
+  color: rgba(46, 52, 64, 0.7);
+}
+
+.login-dialog .login-dialog-prompt-entry StLabel.hint-text {
+  color: rgba(46, 52, 64, 0.7);
+}
+
+.login-dialog .login-dialog-prompt-entry:focus {
+  background-color: #d5dae2;
+  color: #2e3440;
+}
+
+.login-dialog .login-dialog-prompt-entry:hover {
+  background-color: #d2d6dd;
+  color: #2e3440;
+}
+
+.login-dialog .login-dialog-prompt-entry:insensitive {
+  background-color: #e2e6ed;
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.login-dialog .user-widget .user-icon {
+  background-color: rgba(46, 52, 64, 0.13);
+}
+
+.login-dialog-message {
+  color: #4a4f5b;
+}
+
+.login-dialog-message-hint {
+  color: #4a4f5b;
+}
+
+.login-dialog-not-listed-button {
+  background-color: #eceff4;
+  color: #2e3440;
+}
+
+.login-dialog-not-listed-button:active {
+  background-color: #cfd7e3;
+  color: #2e3440;
+}
+
+.login-dialog-not-listed-button:active:focus {
+  background-color: #c9d2df;
+}
+
+.login-dialog-not-listed-button:active:hover {
+  background-color: #b8c3d6;
+}
+
+.login-dialog-not-listed-button:focus {
+  background-color: rgba(51, 56, 66, 0.287);
+  color: #2e3440;
+}
+
+.login-dialog-not-listed-button:focus:hover {
+  background-color: #d0d7e2;
+}
+
+.login-dialog-not-listed-button:hover {
+  background-color: #d5dce7;
+  color: #2e3440;
+}
+
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item {
+  background-color: #dbdee4;
+}
+
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:insensitive {
+  background-color: #e4e6ea;
+}
+
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:logged-in .user-icon {
+  border-color: #81a1c1;
+}
+
+.login-dialog-user-list-view .login-dialog-user-list .login-dialog-user-list-item:selected {
+  background-color: #d5d9df;
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button {
+  background-color: rgba(46, 52, 64, 0.1);
+  color: #2e3440;
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:active {
+  background-color: rgba(46, 52, 64, 0.16);
+  color: #2e3440;
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:active:focus {
+  background-color: rgba(65, 77, 93, 0.202);
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:active:hover {
+  background-color: rgba(46, 52, 64, 0.19);
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:checked {
+  background-color: #bdc3cf;
+  color: #2e3440;
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:checked:active {
+  background-color: #a2abbc;
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:checked:hover {
+  background-color: #b1b9c6;
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:focus {
+  background-color: rgba(71, 85, 103, 0.145);
+  color: #2e3440;
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:focus:hover {
+  background-color: rgba(67, 80, 97, 0.173);
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:hover {
+  background-color: rgba(46, 52, 64, 0.13);
+  color: #2e3440;
+}
+
+.modal-dialog .modal-dialog-button-box .modal-dialog-button:insensitive {
+  background-color: rgba(46, 52, 64, 0.1);
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.osd-monitor-label {
+  background-color: #81a1c1;
+  color: #2e3440;
+}
+
+.page-navigation-arrow > StIcon {
+  color: #2e3440;
+}
+
+.popup-inactive-menu-item {
+  color: #2e3440;
+}
+
+.popup-inactive-menu-item:insensitive {
+  color: #898e98;
+}
+
+.popup-menu-content {
+  background-color: #e5e9f0;
+}
+
+.popup-menu-item:active {
+  background-color: #bec6d2;
+  color: #2e3440;
+}
+
+.popup-menu-item:active:focus {
+  background-color: #bac2cf;
+}
+
+.popup-menu-item:active:hover {
+  background-color: #a9b3c3;
+}
+
+.popup-menu-item:checked {
+  background-color: #c4cbd6;
+  color: #2e3440;
+}
+
+.popup-menu-item:hover {
+  background-color: #c4cbd6;
+  color: #2e3440;
+}
+
+.popup-menu-item:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.popup-menu-item:selected {
+  background-color: #c4cbd6;
+  color: #2e3440;
+}
+
+.popup-sub-menu {
+  background-color: #c7cbd3;
+}
+
+.popup-sub-menu .popup-menu-item:active {
+  background-color: #adb3bf;
+  color: #2e3440;
+}
+
+.popup-sub-menu .popup-menu-item:active:focus {
+  background-color: #a9b0bc;
+}
+
+.popup-sub-menu .popup-menu-item:active:hover {
+  background-color: #99a1af;
+}
+
+.popup-sub-menu .popup-menu-item:checked {
+  background-color: #b3b9c3;
+  color: #2e3440;
+}
+
+.popup-sub-menu .popup-menu-item:hover {
+  background-color: #b3b9c3;
+  color: #2e3440;
+}
+
+.popup-sub-menu .popup-menu-item:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.popup-sub-menu .popup-menu-item:selected {
+  background-color: #b3b9c3;
+  color: #2e3440;
+}
+
+.prompt-dialog .prompt-dialog-error-label {
+  background-color: rgba(251, 192, 45, 0.1);
+}
+
+.prompt-dialog .prompt-dialog-info-label {
+  background-color: rgba(46, 52, 64, 0.1);
+}
+
+.search-provider-icon:drop {
+  box-shadow: inset 0 0 0 2px rgba(129, 161, 193, 0.8);
+}
+
+.switcher-list .item-box {
+  color: #2e3440;
+}
+
+.switcher-list .item-box:active {
+  background-color: #cbd3e1;
+  color: #2e3440;
+}
+
+.switcher-list .item-box:active:focus {
+  background-color: #c5cedd;
+}
+
+.switcher-list .item-box:active:hover {
+  background-color: #b4c0d4;
+}
+
+.switcher-list .item-box:checked {
+  background-color: #ced5e3;
+  color: #2e3440;
+}
+
+.switcher-list .item-box:checked:active {
+  background-color: #b1bdd2;
+}
+
+.switcher-list .item-box:checked:hover {
+  background-color: #b7c2d5;
+}
+
+.switcher-list .item-box:drop {
+  background-color: rgba(129, 161, 193, 0.2);
+  box-shadow: inset 0 0 0 2px rgba(129, 161, 193, 0.8);
+}
+
+.switcher-list .item-box:focus {
+  background-color: rgba(195, 204, 215, 0.287);
+  color: #2e3440;
+}
+
+.switcher-list .item-box:focus:hover {
+  background-color: #cbd3e0;
+}
+
+.switcher-list .item-box:highlighted {
+  background-color: #ced5e3;
+  color: #2e3440;
+}
+
+.switcher-list .item-box:highlighted:active {
+  background-color: #b1bdd2;
+}
+
+.switcher-list .item-box:highlighted:hover {
+  background-color: #b7c2d5;
+}
+
+.switcher-list .item-box:hover {
+  color: #2e3440;
+}
+
+.switcher-list .item-box:insensitive {
+  background-color: #e8ebf2;
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.unlock-dialog {
+  color: #2e3440;
+}
+
+.unlock-dialog .button {
+  background-color: rgba(46, 52, 64, 0.1);
+  color: #2e3440;
+}
+
+.unlock-dialog .button:active {
+  background-color: rgba(46, 52, 64, 0.16);
+  color: #2e3440;
+}
+
+.unlock-dialog .button:active:focus {
+  background-color: rgba(65, 77, 93, 0.202);
+}
+
+.unlock-dialog .button:active:hover {
+  background-color: rgba(46, 52, 64, 0.19);
+}
+
+.unlock-dialog .button:checked {
+  background-color: #bdc3cf;
+  color: #2e3440;
+}
+
+.unlock-dialog .button:checked:active {
+  background-color: #a2abbc;
+}
+
+.unlock-dialog .button:checked:hover {
+  background-color: #b1b9c6;
+}
+
+.unlock-dialog .button:focus {
+  background-color: rgba(71, 85, 103, 0.145);
+  color: #2e3440;
+}
+
+.unlock-dialog .button:focus:hover {
+  background-color: rgba(67, 80, 97, 0.173);
+}
+
+.unlock-dialog .button:hover {
+  background-color: rgba(46, 52, 64, 0.13);
+  color: #2e3440;
+}
+
+.unlock-dialog .button:insensitive {
+  background-color: rgba(46, 52, 64, 0.1);
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.unlock-dialog .login-dialog-prompt-entry {
+  background-color: rgba(46, 52, 64, 0.1);
+  color: rgba(46, 52, 64, 0.7);
+}
+
+.unlock-dialog .login-dialog-prompt-entry StLabel.hint-text {
+  color: rgba(46, 52, 64, 0.7);
+}
+
+.unlock-dialog .login-dialog-prompt-entry:focus {
+  background-color: rgba(46, 52, 64, 0.115);
+  color: #2e3440;
+}
+
+.unlock-dialog .login-dialog-prompt-entry:hover {
+  background-color: rgba(46, 52, 64, 0.1);
+  color: #2e3440;
+}
+
+.unlock-dialog .login-dialog-prompt-entry:insensitive {
+  background-color: rgba(46, 52, 64, 0.1);
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.unlock-dialog .user-widget .user-icon {
+  background-color: rgba(46, 52, 64, 0.13);
+}
+
+.unlock-dialog-notifications-container .message StButton {
+  color: #2e3440;
+}
+
+.unlock-dialog-notifications-container .message StButton:active {
+  background-color: rgba(46, 52, 64, 0.16);
+  color: #2e3440;
+}
+
+.unlock-dialog-notifications-container .message StButton:active:focus {
+  background-color: rgba(65, 77, 93, 0.202);
+}
+
+.unlock-dialog-notifications-container .message StButton:active:hover {
+  background-color: rgba(46, 52, 64, 0.19);
+}
+
+.unlock-dialog-notifications-container .message StButton:checked {
+  background-color: #bdc3cf;
+  color: #2e3440;
+}
+
+.unlock-dialog-notifications-container .message StButton:checked:active {
+  background-color: #a2abbc;
+}
+
+.unlock-dialog-notifications-container .message StButton:checked:hover {
+  background-color: #b1b9c6;
+}
+
+.unlock-dialog-notifications-container .message StButton:focus {
+  background-color: rgba(71, 85, 103, 0.145);
+  color: #2e3440;
+}
+
+.unlock-dialog-notifications-container .message StButton:focus:hover {
+  background-color: rgba(67, 80, 97, 0.173);
+}
+
+.unlock-dialog-notifications-container .message StButton:hover {
+  background-color: rgba(46, 52, 64, 0.13);
+  color: #2e3440;
+}
+
+.unlock-dialog-notifications-container .message StButton:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source .message-header {
+  color: #2e3440;
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton {
+  color: #2e3440;
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton:active {
+  background-color: rgba(46, 52, 64, 0.16);
+  color: #2e3440;
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton:active:focus {
+  background-color: rgba(65, 77, 93, 0.202);
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton:active:hover {
+  background-color: rgba(46, 52, 64, 0.19);
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton:checked {
+  background-color: #bdc3cf;
+  color: #2e3440;
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton:checked:active {
+  background-color: #a2abbc;
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton:checked:hover {
+  background-color: #b1b9c6;
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton:focus {
+  background-color: rgba(71, 85, 103, 0.145);
+  color: #2e3440;
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton:focus:hover {
+  background-color: rgba(67, 80, 97, 0.173);
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton:hover {
+  background-color: rgba(46, 52, 64, 0.13);
+  color: #2e3440;
+}
+
+.unlock-dialog-notifications-container .unlock-dialog-notification-source StButton:insensitive {
+  color: rgba(46, 52, 64, 0.5);
+}
+
+.user-icon {
+  background-color: rgba(46, 52, 64, 0.05);
+}
+
+.user-icon.user-avatar {
+  box-shadow: inset 0 0 0 1px rgba(46, 52, 64, 0.1);
+}
+
+.word-suggestions {
+  color: #2e3440;
+}
+
+.word-suggestions StButton:active {
+  background-color: #a9b0bb;
+  color: #2e3440;
+}
+
+.word-suggestions StButton:active:focus {
+  background-color: #a6adb9;
+}
+
+.word-suggestions StButton:active:hover {
+  background-color: #9ea5b2;
+}
+
+.word-suggestions StButton:checked {
+  background-color: #acb2bd;
+  color: #2e3440;
+}
+
+.word-suggestions StButton:checked:active {
+  background-color: #939ba9;
+}
+
+.word-suggestions StButton:checked:hover {
+  background-color: #a1a8b4;
+}
+
+.word-suggestions StButton:focus {
+  background-color: #cfd4dc;
+  color: #2e3440;
+}
+
+.word-suggestions StButton:focus:hover {
+  background-color: #c3cad4;
+}
+
+.word-suggestions StButton:hover {
+  background-color: #b8bdc6;
+  color: #2e3440;
+}
+
+.workspace-switcher {
+  color: #2e3440;
+}
+
+/* (C) Renamed widgets mapped to Agata's own colors */
+.quick-toggle-has-menu {
+  border-radius: 10px;
+  min-width: 12em;
+  max-width: 12em;
+  min-height: 44px;
+  border: none;
+}
+
+.quick-toggle-has-menu .quick-toggle {
+  min-width: auto;
+  max-width: auto;
+}
+
+.quick-toggle-has-menu .quick-toggle:ltr {
+  border-radius: 10px 0 0 10px;
+}
+
+.quick-toggle-has-menu .quick-toggle:ltr > StBoxLayout {
+  padding-right: 9px;
+}
+
+.quick-toggle-has-menu .quick-toggle:rtl {
+  border-radius: 0 10px 10px 0;
+}
+
+.quick-toggle-has-menu .quick-toggle:rtl > StBoxLayout {
+  padding-left: 9px;
+}
+
+.quick-toggle-has-menu .quick-toggle:ltr:last-child {
+  border-radius: 10px;
+}
+
+.quick-toggle-has-menu .quick-toggle:rtl:last-child {
+  border-radius: 10px;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button.icon-button {
+  background-color: rgba(46, 52, 64, 0.05) !important;
+  padding: 6px 10.5px;
+  border: none;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button.icon-button:hover {
+  background-color: rgba(46, 52, 64, 0.12) !important;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button.icon-button:active {
+  background-color: rgba(46, 52, 64, 0.15) !important;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button.icon-button:checked {
+  background-color: #81A1C1 !important;
+  color: #2E3440;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button.icon-button:checked:hover {
+  background-color: #81A1C1 !important;
+  color: #2E3440;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button.icon-button:checked:active {
+  background-color: #88C0D0 !important;
+  color: #2E3440;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button.icon-button:ltr {
+  border-radius: 0 10px 10px 0;
+  border-left-width: 0;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button.icon-button:rtl {
+  border-radius: 10px 0 0 10px;
+  border-right-width: 0;
+}
+
+#panel .panel-button.screen-recording-indicator,
+#panel .panel-button.screen-recording-indicator:hover,
+#panel .panel-button.screen-recording-indicator:focus,
+#panel .panel-button.screen-recording-indicator:active,
+#panel .panel-button.screen-recording-indicator:checked,
+#panel .panel-button.screen-sharing-indicator,
+#panel .panel-button.screen-sharing-indicator:hover,
+#panel .panel-button.screen-sharing-indicator:focus,
+#panel .panel-button.screen-sharing-indicator:active,
+#panel .panel-button.screen-sharing-indicator:checked,
+#panel:overview .panel-button.screen-recording-indicator,
+#panel:overview .panel-button.screen-recording-indicator:hover,
+#panel:overview .panel-button.screen-recording-indicator:focus,
+#panel:overview .panel-button.screen-recording-indicator:active,
+#panel:overview .panel-button.screen-recording-indicator:checked,
+#panel:overview .panel-button.screen-sharing-indicator,
+#panel:overview .panel-button.screen-sharing-indicator:hover,
+#panel:overview .panel-button.screen-sharing-indicator:focus,
+#panel:overview .panel-button.screen-sharing-indicator:active,
+#panel:overview .panel-button.screen-sharing-indicator:checked,
+#panel.unlock-screen .panel-button.screen-recording-indicator,
+#panel.unlock-screen .panel-button.screen-recording-indicator:hover,
+#panel.unlock-screen .panel-button.screen-recording-indicator:focus,
+#panel.unlock-screen .panel-button.screen-recording-indicator:active,
+#panel.unlock-screen .panel-button.screen-recording-indicator:checked,
+#panel.unlock-screen .panel-button.screen-sharing-indicator,
+#panel.unlock-screen .panel-button.screen-sharing-indicator:hover,
+#panel.unlock-screen .panel-button.screen-sharing-indicator:focus,
+#panel.unlock-screen .panel-button.screen-sharing-indicator:active,
+#panel.unlock-screen .panel-button.screen-sharing-indicator:checked,
+#panel.login-screen .panel-button.screen-recording-indicator,
+#panel.login-screen .panel-button.screen-recording-indicator:hover,
+#panel.login-screen .panel-button.screen-recording-indicator:focus,
+#panel.login-screen .panel-button.screen-recording-indicator:active,
+#panel.login-screen .panel-button.screen-recording-indicator:checked,
+#panel.login-screen .panel-button.screen-sharing-indicator,
+#panel.login-screen .panel-button.screen-sharing-indicator:hover,
+#panel.login-screen .panel-button.screen-sharing-indicator:focus,
+#panel.login-screen .panel-button.screen-sharing-indicator:active,
+#panel.login-screen .panel-button.screen-sharing-indicator:checked {
+  color: #fafafb;
+}
+
+#panel .panel-button.screen-recording-indicator {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 100px #c01c28;
+}
+
+#panel .panel-button.screen-recording-indicator:focus,
+#panel .panel-button.screen-recording-indicator:hover {
+  box-shadow: inset 0 0 0 100px #d61f2d;
+}
+
+#panel .panel-button.screen-recording-indicator:active,
+#panel .panel-button.screen-recording-indicator:checked {
+  box-shadow: inset 0 0 0 100px #e02a37;
+}
+
+#panel .panel-button.screen-recording-indicator:active:hover,
+#panel .panel-button.screen-recording-indicator:checked:hover {
+  box-shadow: inset 0 0 0 100px #e13340;
+}
+
+#panel .panel-button.screen-sharing-indicator {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 100px #ff7800;
+}
+
+#panel .panel-button.screen-sharing-indicator:focus,
+#panel .panel-button.screen-sharing-indicator:hover {
+  box-shadow: inset 0 0 0 100px #ff861a;
+}
+
+#panel .panel-button.screen-sharing-indicator:active,
+#panel .panel-button.screen-sharing-indicator:checked {
+  box-shadow: inset 0 0 0 100px #ff902e;
+}
+
+#panel .panel-button.screen-sharing-indicator:active:hover,
+#panel .panel-button.screen-sharing-indicator:checked:hover {
+  box-shadow: inset 0 0 0 100px #ff9638;
+}
+
+#panel:overview .panel-button.screen-recording-indicator,
+#panel.unlock-screen .panel-button.screen-recording-indicator,
+#panel.login-screen .panel-button.screen-recording-indicator {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 100px #c01c28;
+}
+
+#panel:overview .panel-button.screen-recording-indicator:focus,
+#panel:overview .panel-button.screen-recording-indicator:hover,
+#panel.unlock-screen .panel-button.screen-recording-indicator:focus,
+#panel.unlock-screen .panel-button.screen-recording-indicator:hover,
+#panel.login-screen .panel-button.screen-recording-indicator:focus,
+#panel.login-screen .panel-button.screen-recording-indicator:hover {
+  box-shadow: inset 0 0 0 100px #d61f2d;
+}
+
+#panel:overview .panel-button.screen-recording-indicator:active,
+#panel:overview .panel-button.screen-recording-indicator:checked,
+#panel.unlock-screen .panel-button.screen-recording-indicator:active,
+#panel.unlock-screen .panel-button.screen-recording-indicator:checked,
+#panel.login-screen .panel-button.screen-recording-indicator:active,
+#panel.login-screen .panel-button.screen-recording-indicator:checked {
+  box-shadow: inset 0 0 0 100px #e02a37;
+}
+
+#panel:overview .panel-button.screen-recording-indicator:active:hover,
+#panel:overview .panel-button.screen-recording-indicator:checked:hover,
+#panel.unlock-screen .panel-button.screen-recording-indicator:active:hover,
+#panel.unlock-screen .panel-button.screen-recording-indicator:checked:hover,
+#panel.login-screen .panel-button.screen-recording-indicator:active:hover,
+#panel.login-screen .panel-button.screen-recording-indicator:checked:hover {
+  box-shadow: inset 0 0 0 100px #e13340;
+}
+
+#panel:overview .panel-button.screen-sharing-indicator,
+#panel.unlock-screen .panel-button.screen-sharing-indicator,
+#panel.login-screen .panel-button.screen-sharing-indicator {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 100px #ff7800;
+}
+
+#panel:overview .panel-button.screen-sharing-indicator:focus,
+#panel:overview .panel-button.screen-sharing-indicator:hover,
+#panel.unlock-screen .panel-button.screen-sharing-indicator:focus,
+#panel.unlock-screen .panel-button.screen-sharing-indicator:hover,
+#panel.login-screen .panel-button.screen-sharing-indicator:focus,
+#panel.login-screen .panel-button.screen-sharing-indicator:hover {
+  box-shadow: inset 0 0 0 100px #ff861a;
+}
+
+#panel:overview .panel-button.screen-sharing-indicator:active,
+#panel:overview .panel-button.screen-sharing-indicator:checked,
+#panel.unlock-screen .panel-button.screen-sharing-indicator:active,
+#panel.unlock-screen .panel-button.screen-sharing-indicator:checked,
+#panel.login-screen .panel-button.screen-sharing-indicator:active,
+#panel.login-screen .panel-button.screen-sharing-indicator:checked {
+  box-shadow: inset 0 0 0 100px #ff902e;
+}
+
+#panel:overview .panel-button.screen-sharing-indicator:active:hover,
+#panel:overview .panel-button.screen-sharing-indicator:checked:hover,
+#panel.unlock-screen .panel-button.screen-sharing-indicator:active:hover,
+#panel.unlock-screen .panel-button.screen-sharing-indicator:checked:hover,
+#panel.login-screen .panel-button.screen-sharing-indicator:active:hover,
+#panel.login-screen .panel-button.screen-sharing-indicator:checked:hover {
+  box-shadow: inset 0 0 0 100px #ff9638;
+}
+
+StScrollBar > .vhandle,
+StScrollBar > .hhandle {
+  background-color: rgba(46, 52, 64, 0.5);
+}
+
+StScrollBar > .vhandle:hover,
+StScrollBar > .hhandle:hover {
+  background-color: rgba(46, 52, 64, 0.7);
+}
+
+StScrollBar > .vhandle:active,
+StScrollBar > .hhandle:active {
+  background-color: #2E3440;
+}
+
+#unlockDialogNotifications > .vhandle,
+#unlockDialogNotifications > .hhandle {
+  background-color: rgba(33, 33, 33, 0.3);
+}
+
+#unlockDialogNotifications > .vhandle:hover,
+#unlockDialogNotifications > .hhandle:hover {
+  background-color: rgba(33, 33, 33, 0.5);
+}
+
+#unlockDialogNotifications > .vhandle:active,
+#unlockDialogNotifications > .hhandle:active {
+  background-color: rgba(91, 155, 248, 0.5);
+}
+
+.toggle-switch,
+.toggle-switch:hover,
+.toggle-switch:checked,
+.toggle-switch:checked:hover {
+  background-color: transparent;
+}
+
+.toggle-switch .handle,
+.toggle-switch:checked .handle {
+  background-color: transparent;
+  box-shadow: none;
+}
+/* END Agata GNOME Shell 47+ compatibility layer */
+
 stage {
   font-size: 11pt;
   color: #2E3440;
