@@ -1,13 +1,13 @@
 {
   "name": "Agata",
   "homepage": "https://github.com/palpinter/agata-gtk-theme",
-  "about": "Source of truth for the app color schemes in extras/. Edit here, then run tools/gen-app-themes.py. ui.* must match the GTK theme (libadwaita palette block in themes/<variant>/gtk-4.0/gtk.css); min_contrast, where present, is enforced for the ANSI colors on ui.background. The generator checks both.",
+  "about": "Source of truth for the app color schemes in extras/. Edit here, then run tools/gen-app-themes.py. ui.* must match the GTK theme (libadwaita palette block in themes/<variant>/gtk-4.0/gtk.css); min_contrast, where present, is enforced on ui.background for the ANSI colors (normal, bright) and the editor syntax colors (syntax, and comment for syntax.comment). The generator checks both.",
   "variants": {
     "Agata-Nord-Dark": {
       "title": "Agata Nord Dark",
       "edition": "nord",
       "appearance": "dark",
-      "notes": "Standard Nord ANSI colors; bright black lifted to Nord's comment gray #616e88 (#4c566a is barely visible).",
+      "notes": "Standard Nord ANSI colors; bright black lifted to Nord's comment gray #616e88 (#4c566a is barely visible). Syntax follows Nord's official mapping (nord-vim); comments are lifted from #616e88 to #808ca4 (3.5:1) because the Agata background is lighter than Nord's.",
       "ui": {
         "background": "#303744",
         "foreground": "#eceff4",
@@ -58,16 +58,43 @@
           "cyan": "#6d96a5",
           "white": "#aeb3bb"
         }
+      },
+      "syntax": {
+        "comment": "#808ca4",
+        "keyword": "#81a1c1",
+        "operator": "#81a1c1",
+        "punctuation": "#eceff4",
+        "function": "#88c0d0",
+        "function_builtin": "#88c0d0",
+        "type": "#8fbcbb",
+        "type_builtin": "#81a1c1",
+        "string": "#a3be8c",
+        "escape": "#ebcb8b",
+        "number": "#b48ead",
+        "boolean": "#81a1c1",
+        "constant": "#d8dee9",
+        "constant_builtin": "#81a1c1",
+        "variable": "#d8dee9",
+        "variable_builtin": "#81a1c1",
+        "parameter": "#d8dee9",
+        "property": "#d8dee9",
+        "module": "#8fbcbb",
+        "preproc": "#81a1c1",
+        "decorator": "#d08770",
+        "tag": "#81a1c1",
+        "tag_attribute": "#8fbcbb"
       }
     },
     "Agata-Nord-Light": {
       "title": "Agata Nord Light",
       "edition": "nord",
       "appearance": "light",
-      "notes": "Nord hues darkened (HSL lightness only) to >= 4.5:1 (normal) and >= 3:1 (bright) contrast on the background; plain Nord colors reach about 2:1.",
+      "notes": "Nord hues darkened (HSL lightness only) to >= 4.5:1 (normal) and >= 3:1 (bright) contrast on the background; plain Nord colors reach about 2:1. Syntax uses Nord's mapping with the darkened hues; nord7 and nord12 are darkened the same way to #467473 and #aa5338.",
       "min_contrast": {
         "normal": 4.5,
-        "bright": 3.0
+        "bright": 3.0,
+        "syntax": 4.5,
+        "comment": 3.0
       },
       "ui": {
         "background": "#eceff4",
@@ -109,13 +136,38 @@
           "cyan": "#4393aa",
           "white": "#e5e9f0"
         }
+      },
+      "syntax": {
+        "comment": "#616e88",
+        "keyword": "#4d6e96",
+        "operator": "#4d6e96",
+        "punctuation": "#2e3440",
+        "function": "#357587",
+        "function_builtin": "#357587",
+        "type": "#467473",
+        "type_builtin": "#4d6e96",
+        "string": "#597442",
+        "escape": "#8d6618",
+        "number": "#8c5d83",
+        "boolean": "#4d6e96",
+        "constant": "#2e3440",
+        "constant_builtin": "#4d6e96",
+        "variable": "#2e3440",
+        "variable_builtin": "#4d6e96",
+        "parameter": "#2e3440",
+        "property": "#2e3440",
+        "module": "#467473",
+        "preproc": "#4d6e96",
+        "decorator": "#aa5338",
+        "tag": "#4d6e96",
+        "tag_attribute": "#467473"
       }
     },
     "Agata-Gruvbox-Dark": {
       "title": "Agata Gruvbox Dark",
       "edition": "gruvbox",
       "appearance": "dark",
-      "notes": "Standard Gruvbox ANSI colors; black lifted to #3c3836 so it differs from the background.",
+      "notes": "Standard Gruvbox ANSI colors; black lifted to #3c3836 so it differs from the background. Syntax follows the gruvbox (morhetz/gruvbox.nvim) mapping.",
       "ui": {
         "background": "#282828",
         "foreground": "#ebdbb2",
@@ -156,13 +208,38 @@
           "cyan": "#8ec07c",
           "white": "#ebdbb2"
         }
+      },
+      "syntax": {
+        "comment": "#928374",
+        "keyword": "#fb4934",
+        "operator": "#ebdbb2",
+        "punctuation": "#ebdbb2",
+        "function": "#b8bb26",
+        "function_builtin": "#fe8019",
+        "type": "#fabd2f",
+        "type_builtin": "#fabd2f",
+        "string": "#b8bb26",
+        "escape": "#fe8019",
+        "number": "#d3869b",
+        "boolean": "#d3869b",
+        "constant": "#d3869b",
+        "constant_builtin": "#fe8019",
+        "variable": "#ebdbb2",
+        "variable_builtin": "#fe8019",
+        "parameter": "#83a598",
+        "property": "#83a598",
+        "module": "#ebdbb2",
+        "preproc": "#8ec07c",
+        "decorator": "#8ec07c",
+        "tag": "#8ec07c",
+        "tag_attribute": "#83a598"
       }
     },
     "Agata-Gruvbox-Light": {
       "title": "Agata Gruvbox Light",
       "edition": "gruvbox",
       "appearance": "light",
-      "notes": "Gruvbox colors in light-theme order: dark black, light white, the readable faded shades as normal and the neutral ones as bright.",
+      "notes": "Gruvbox colors in light-theme order: dark black, light white, the readable faded shades as normal and the neutral ones as bright. Syntax follows the gruvbox (morhetz/gruvbox.nvim) mapping with the light-mode colors.",
       "ui": {
         "background": "#f9f5d7",
         "foreground": "#3c3836",
@@ -203,6 +280,31 @@
           "cyan": "#689d6a",
           "white": "#ebdbb2"
         }
+      },
+      "syntax": {
+        "comment": "#928374",
+        "keyword": "#9d0006",
+        "operator": "#3c3836",
+        "punctuation": "#3c3836",
+        "function": "#79740e",
+        "function_builtin": "#af3a03",
+        "type": "#b57614",
+        "type_builtin": "#b57614",
+        "string": "#79740e",
+        "escape": "#af3a03",
+        "number": "#8f3f71",
+        "boolean": "#8f3f71",
+        "constant": "#8f3f71",
+        "constant_builtin": "#af3a03",
+        "variable": "#3c3836",
+        "variable_builtin": "#af3a03",
+        "parameter": "#076678",
+        "property": "#076678",
+        "module": "#3c3836",
+        "preproc": "#427b58",
+        "decorator": "#427b58",
+        "tag": "#427b58",
+        "tag_attribute": "#076678"
       }
     }
   }

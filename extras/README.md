@@ -8,6 +8,7 @@ the GNOME Shell. Each app has its own folder with the schemes and installation s
 | Alacritty | [`alacritty/`](alacritty) | Nord Dark, Nord Light, Gruvbox Dark, Gruvbox Light |
 | Ghostty | [`ghostty/`](ghostty) | Nord Dark, Nord Light, Gruvbox Dark, Gruvbox Light |
 | Midnight Commander | [`mc/`](mc) | Nord Dark, Nord Light, Gruvbox Dark, Gruvbox Light |
+| Neovim (with lualine themes) | [`neovim/`](neovim) | Nord Dark, Nord Light, Gruvbox Dark, Gruvbox Light, plus `agata-nord` and `agata-gruvbox`, which follow `'background'` |
 
 ## Variants
 
@@ -27,7 +28,10 @@ generated from it, and you can also read it to theme an app that is not covered 
   lists), `elevated` (cards and popovers), `accent`, `accent_foreground` and `accent_text`.
 - `terminal`: terminal roles: text, cursor, selection, status bar and search matches.
 - `ansi`: the 16 ANSI colors (`normal`, `bright`, optionally `dim`).
-- `min_contrast`: optional readability targets for the ANSI colors on the background.
+- `syntax`: editor syntax roles (`comment`, `keyword`, `function`, `type`, `string`, ...). They
+  follow each edition's own conventions: nord-vim for Nord, gruvbox for Gruvbox.
+- `min_contrast`: optional readability targets on the background, for the ANSI colors
+  (`normal`, `bright`) and the syntax colors (`syntax`, and `comment` for the comment role).
 
 ## Regenerating and adding apps
 
@@ -36,6 +40,7 @@ files by hand. Change `palette.json` and run the script. It also checks that:
 
 - the `ui` colors still match the GTK themes (the libadwaita palette block in
   `themes/*/gtk-4.0/gtk.css`);
+- every variant has exactly the syntax roles the script expects;
 - every `min_contrast` target is met.
 
 If a check fails, the script writes nothing. With `--check`, it exits with status 1 when any
@@ -43,7 +48,8 @@ file is out of date.
 
 To add an app:
 
-1. Write a `render_<app>(name, variant)` function in the script.
-2. Register the function in `APPS` with its output path.
+1. Write a `render_<app>(name, variant)` function in the script. It returns a dict that maps
+   each output path to the file text.
+2. Register the function in `APPS`.
 3. Add `extras/<app>/README.md` with installation steps.
 4. Add a row to the table above.
