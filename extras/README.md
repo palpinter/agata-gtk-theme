@@ -9,6 +9,7 @@ the GNOME Shell. Each app has its own folder with the schemes and installation s
 | Ghostty | [`ghostty/`](ghostty) | Nord Dark, Nord Light, Gruvbox Dark, Gruvbox Light |
 | Midnight Commander | [`mc/`](mc) | Nord Dark, Nord Light, Gruvbox Dark, Gruvbox Light |
 | Neovim (with lualine themes) | [`neovim/`](neovim) | Nord Dark, Nord Light, Gruvbox Dark, Gruvbox Light, plus `agata-nord` and `agata-gruvbox`, which follow `'background'` |
+| Visual Studio Code | [`vscode/`](vscode) | One extension with Nord Dark, Nord Light, Gruvbox Dark and Gruvbox Light |
 
 ## Variants
 

@@ -173,7 +173,7 @@ Matching wallpapers for the Agata theme are available in the repository:
 
 ## Other apps
 
-Matching color schemes for other apps are available in all four variants (Nord and Gruvbox, Dark and Light) in [`extras`](extras). Alacritty, Ghostty, Midnight Commander and Neovim are covered so far. Each app folder has installation steps, and [`extras/palette.json`](extras/palette.json) lists every color for theming apps that have no scheme yet.
+Matching color schemes for other apps are available in all four variants (Nord and Gruvbox, Dark and Light) in [`extras`](extras). Alacritty, Ghostty, Midnight Commander, Neovim and Visual Studio Code are covered so far. Each app folder has installation steps, and [`extras/palette.json`](extras/palette.json) lists every color for theming apps that have no scheme yet.
 
 ## Credits
 

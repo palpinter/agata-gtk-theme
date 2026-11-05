@@ -12,6 +12,7 @@ initialization needs a display.
 | `tools/regenerate-shell-layer.sh` | Rebuilds the generated *GNOME Shell 47+ compatibility layer* at the top of each `gnome-shell/gnome-shell.css`. It uses the GNOME Shell installed on this machine. With `--check`, it only reports, and exits with status 1 if any file would change. |
 | `tools/add-libadwaita-palette.py` | Rewrites the libadwaita palette block at the end of each `gtk-4.0/gtk.css` from that theme's own colors. |
 | `tools/gen-app-themes.py [--check]` | Generates the app color schemes in `extras/<app>/` from `extras/palette.json`. It checks that the shared UI colors still match the GTK themes and that the declared contrast targets are met (see `extras/README.md`). |
+| `tools/pack-vscode-theme.py [OUT.vsix]` | Packs `extras/vscode/` into a VSIX without npm or vsce, for `code --install-extension`. VS Code ignores extension folders copied into `~/.vscode/extensions` by hand. |
 | `tools/st-probe.sh [--light] THEME 'CHAIN'…` | Prints the computed St style (colors, padding, margin, radius) of a widget chain, with the stock theme underneath. Nothing on the desktop changes. |
 
 ## The GNOME Shell compatibility layer
