@@ -11,6 +11,7 @@ initialization needs a display.
 | `tools/check-parity.sh` | Checks that the Nord and Gruvbox editions differ only in colors and theme names. |
 | `tools/regenerate-shell-layer.sh` | Rebuilds the generated *GNOME Shell 47+ compatibility layer* at the top of each `gnome-shell/gnome-shell.css`. It uses the GNOME Shell installed on this machine. With `--check`, it only reports, and exits with status 1 if any file would change. |
 | `tools/add-libadwaita-palette.py` | Rewrites the libadwaita palette block at the end of each `gtk-4.0/gtk.css` from that theme's own colors. |
+| `tools/gen-terminal-themes.py [--check]` | Generates the Alacritty and Ghostty color schemes in `extras/terminal/`, and checks that their background and accent colors still match the GTK themes. |
 | `tools/st-probe.sh [--light] THEME 'CHAIN'…` | Prints the computed St style (colors, padding, margin, radius) of a widget chain, with the stock theme underneath. Nothing on the desktop changes. |
 
 ## The GNOME Shell compatibility layer

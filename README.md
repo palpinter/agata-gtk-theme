@@ -171,6 +171,10 @@ Matching wallpapers for the Agata theme are available in the repository:
 
 [Wallpapers](https://github.com/deividsonorio/agata-gtk-theme/tree/main/wallpapers)
 
+## Terminal color schemes
+
+Matching color schemes for **Alacritty** and **Ghostty** are available in all four variants (Nord and Gruvbox, Dark and Light) in [`extras/terminal`](extras/terminal). See its README for installation.
+
 ## Credits
 
 Agata is based on the [Jasper GTK theme](https://github.com/vinceliuice/Jasper-gtk-theme).
